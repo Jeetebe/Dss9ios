@@ -1,0 +1,942 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C2122B01E6E8AF300572DBD /* TabCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2122AA1E6E8AF300572DBD /* TabCollectionCell.swift */; };
+		4C2122B11E6E8AF300572DBD /* TabPageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2122AC1E6E8AF300572DBD /* TabPageOption.swift */; };
+		4C2122B21E6E8AF300572DBD /* TabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2122AE1E6E8AF300572DBD /* TabView.swift */; };
+		4C2122F61E6E9A9000572DBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2122E81E6E8FB100572DBD /* AppDelegate.swift */; };
+		4C2122F71E6E9A9500572DBD /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2122E41E6E8FA500572DBD /* ListViewController.swift */; };
+		4C2122F81E6E9A9500572DBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2122E51E6E8FA500572DBD /* ViewController.swift */; };
+		4C2122F91E6E9AA800572DBD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2122F41E6E93DF00572DBD /* LaunchScreen.xib */; };
+		4C2122FA1E6E9AAE00572DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C2122EC1E6E8FC300572DBD /* Main.storyboard */; };
+		4C2122FE1E6EA1FB00572DBD /* TabCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2122AB1E6E8AF300572DBD /* TabCollectionCell.xib */; };
+		4C2123001E6EA1FB00572DBD /* TabView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4C2122AF1E6E8AF300572DBD /* TabView.xib */; };
+		4C4753CA1E7159C600D9DD5C /* TabPageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* TabPageViewController.framework */; };
+		4C4753CB1E7159C600D9DD5C /* TabPageViewController.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* TabPageViewController.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		602FD2419F5EF7C1DC11FBE4 /* Pods_TabPageViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 382306294FDBC1E1944959DF /* Pods_TabPageViewController.framework */; };
+		ED647FD93C870433D915202F /* Pods_TabPageViewControllerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9BD18AB1D4DC2B4A97F273 /* Pods_TabPageViewControllerDemo.framework */; };
+		F8CE39F71F35AE3A00CF74BA /* LimitedTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE39F61F35AE3A00CF74BA /* LimitedTabPageViewController.swift */; };
+		F8CE39F91F35AE6500CF74BA /* InfiniteTabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8CE39F81F35AE6500CF74BA /* InfiniteTabPageViewController.swift */; };
+		FA0B476F2065547F00AF987E /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B476E2065547F00AF987E /* CardView.swift */; };
+		FA0B47762065550300AF987E /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B47722065550300AF987E /* DesignTextField.swift */; };
+		FA0B47772065550300AF987E /* DesignLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B47732065550300AF987E /* DesignLabel.swift */; };
+		FA0B47782065550300AF987E /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B47742065550300AF987E /* DesignButton.swift */; };
+		FA0B47792065550300AF987E /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B47752065550300AF987E /* DesignView.swift */; };
+		FA0FC2112066B365001832FC /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA0FC20A2066B325001832FC /* Charts.framework */; };
+		FA0FC2122066B365001832FC /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA0FC20A2066B325001832FC /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA0FC2172066B38A001832FC /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0FC2162066B38A001832FC /* PieChartViewController.swift */; };
+		FA6723D42067591800D438C0 /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6723D32067591800D438C0 /* DropDown.framework */; };
+		FA6723D720675AA100D438C0 /* DropDown.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA6723D32067591800D438C0 /* DropDown.framework */; };
+		FA6723D820675AA100D438C0 /* DropDown.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FA6723D32067591800D438C0 /* DropDown.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FA6723D920675AC400D438C0 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B477A206555A400AF987E /* TableViewController.swift */; };
+		FA6723DA20675AEA00D438C0 /* BcthObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B477F20656FD900AF987E /* BcthObj.swift */; };
+		FA6723DB20675AED00D438C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B477D20656D3100AF987E /* User.swift */; };
+		FA6723DC20675B4E00D438C0 /* Cellbcth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0B4770206554DA00AF987E /* Cellbcth.swift */; };
+		FA6723E320675FAF00D438C0 /* BcvlrObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6723DF20675D8F00D438C0 /* BcvlrObj.swift */; };
+		FA6723E420675FB300D438C0 /* TabVlrViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6723DD20675D8700D438C0 /* TabVlrViewController.swift */; };
+		FA6723E520675FCA00D438C0 /* cellvlr.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6723E120675E7B00D438C0 /* cellvlr.swift */; };
+		OBJ_21 /* TabPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* TabPageViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C4753CC1E7159C600D9DD5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = OBJ_1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = OBJ_16;
+			remoteInfo = TabPageViewController;
+		};
+		FA0FBE552066AB9E001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FBE502066AB9E001832FC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		FA0FBE572066AB9E001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FBE502066AB9E001832FC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		FA0FBE5E2066ABD0001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FBE592066ABD0001832FC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		FA0FBE602066ABD0001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FBE592066ABD0001832FC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		FA0FC2092066B325001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FC2042066B325001832FC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		FA0FC20B2066B325001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FC2042066B325001832FC /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
+		FA0FC2132066B365001832FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA0FC2042066B325001832FC /* Charts.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A58A4ED274A941CA248EA921;
+			remoteInfo = Charts;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4C4753CE1E7159C600D9DD5C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				4C4753CB1E7159C600D9DD5C /* TabPageViewController.framework in Embed Frameworks */,
+				FA0FC2122066B365001832FC /* Charts.framework in Embed Frameworks */,
+				FA6723D820675AA100D438C0 /* DropDown.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		382306294FDBC1E1944959DF /* Pods_TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2122AA1E6E8AF300572DBD /* TabCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabCollectionCell.swift; sourceTree = "<group>"; };
+		4C2122AB1E6E8AF300572DBD /* TabCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabCollectionCell.xib; sourceTree = "<group>"; };
+		4C2122AC1E6E8AF300572DBD /* TabPageOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabPageOption.swift; sourceTree = "<group>"; };
+		4C2122AE1E6E8AF300572DBD /* TabView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabView.swift; sourceTree = "<group>"; };
+		4C2122AF1E6E8AF300572DBD /* TabView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabView.xib; sourceTree = "<group>"; };
+		4C2122CF1E6E8E9700572DBD /* TabPageViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabPageViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C2122E31E6E8FA500572DBD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Demo/TabPageViewControllerDemo/Info.plist; sourceTree = "<group>"; };
+		4C2122E41E6E8FA500572DBD /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListViewController.swift; path = Demo/TabPageViewControllerDemo/ListViewController.swift; sourceTree = "<group>"; };
+		4C2122E51E6E8FA500572DBD /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = Demo/TabPageViewControllerDemo/ViewController.swift; sourceTree = "<group>"; };
+		4C2122E81E6E8FB100572DBD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Demo/TabPageViewControllerDemo/AppDelegate.swift; sourceTree = "<group>"; };
+		4C2122ED1E6E8FC300572DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Demo/TabPageViewControllerDemo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C2122EE1E6E8FD300572DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Demo/TabPageViewControllerDemo/Assets.xcassets; sourceTree = "<group>"; };
+		4C2122F21E6E91FA00572DBD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C2122F51E6E93DF00572DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Demo/TabPageViewControllerDemo/Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		540B9757A1CF5D8EBE18330E /* Pods-TabPageViewControllerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageViewControllerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageViewControllerDemo/Pods-TabPageViewControllerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7CD34B000FFB73048135D3B3 /* Pods-TabPageViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageViewController/Pods-TabPageViewController.release.xcconfig"; sourceTree = "<group>"; };
+		7EEDADD6BDC1B4A6264A3A70 /* Pods-TabPageViewControllerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageViewControllerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageViewControllerDemo/Pods-TabPageViewControllerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		AC9BD18AB1D4DC2B4A97F273 /* Pods_TabPageViewControllerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TabPageViewControllerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF84C919621433065F39B266 /* Pods-TabPageViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabPageViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TabPageViewController/Pods-TabPageViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		F8CE39F61F35AE3A00CF74BA /* LimitedTabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LimitedTabPageViewController.swift; path = Demo/TabPageViewControllerDemo/LimitedTabPageViewController.swift; sourceTree = "<group>"; };
+		F8CE39F81F35AE6500CF74BA /* InfiniteTabPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfiniteTabPageViewController.swift; path = Demo/TabPageViewControllerDemo/InfiniteTabPageViewController.swift; sourceTree = "<group>"; };
+		FA0B476E2065547F00AF987E /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		FA0B4770206554DA00AF987E /* Cellbcth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cellbcth.swift; sourceTree = "<group>"; };
+		FA0B47722065550300AF987E /* DesignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
+		FA0B47732065550300AF987E /* DesignLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignLabel.swift; sourceTree = "<group>"; };
+		FA0B47742065550300AF987E /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		FA0B47752065550300AF987E /* DesignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		FA0B477A206555A400AF987E /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		FA0B477D20656D3100AF987E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FA0B477F20656FD900AF987E /* BcthObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BcthObj.swift; sourceTree = "<group>"; };
+		FA0FBE502066AB9E001832FC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		FA0FBE592066ABD0001832FC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../Downloads/Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		FA0FC2042066B325001832FC /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "Charts-master/Charts.xcodeproj"; sourceTree = "<group>"; };
+		FA0FC2162066B38A001832FC /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PieChartViewController.swift; path = "../../../Downloads/Charts-master/ChartsDemo/Swift/Demos/PieChartViewController.swift"; sourceTree = "<group>"; };
+		FA6723D32067591800D438C0 /* DropDown.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DropDown.framework; path = Carthage/Build/iOS/DropDown.framework; sourceTree = "<group>"; };
+		FA6723DD20675D8700D438C0 /* TabVlrViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabVlrViewController.swift; sourceTree = "<group>"; };
+		FA6723DF20675D8F00D438C0 /* BcvlrObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BcvlrObj.swift; sourceTree = "<group>"; };
+		FA6723E120675E7B00D438C0 /* cellvlr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cellvlr.swift; sourceTree = "<group>"; };
+		OBJ_12 /* TabPageViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageViewControllerTests.swift; sourceTree = "<group>"; };
+		OBJ_14 /* TabPageViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TabPageViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		OBJ_9 /* TabPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabPageViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C2122CC1E6E8E9700572DBD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6723D720675AA100D438C0 /* DropDown.framework in Frameworks */,
+				FA6723D42067591800D438C0 /* DropDown.framework in Frameworks */,
+				4C4753CA1E7159C600D9DD5C /* TabPageViewController.framework in Frameworks */,
+				FA0FC2112066B365001832FC /* Charts.framework in Frameworks */,
+				ED647FD93C870433D915202F /* Pods_TabPageViewControllerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 0;
+			files = (
+				602FD2419F5EF7C1DC11FBE4 /* Pods_TabPageViewController.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2134AD445EFBF67840C688CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DF84C919621433065F39B266 /* Pods-TabPageViewController.debug.xcconfig */,
+				7CD34B000FFB73048135D3B3 /* Pods-TabPageViewController.release.xcconfig */,
+				540B9757A1CF5D8EBE18330E /* Pods-TabPageViewControllerDemo.debug.xcconfig */,
+				7EEDADD6BDC1B4A6264A3A70 /* Pods-TabPageViewControllerDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4C2122CA1E6E8E5C00572DBD /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				4C2122E21E6E8F9500572DBD /* TabPageViewController */,
+			);
+			name = Demo;
+			sourceTree = "<group>";
+		};
+		4C2122E21E6E8F9500572DBD /* TabPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B477C20656D2400AF987E /* obj */,
+				FA0B476D2065546000AF987E /* design */,
+				FA0B476C2065545000AF987E /* cell */,
+				4C2122E81E6E8FB100572DBD /* AppDelegate.swift */,
+				4C2122EE1E6E8FD300572DBD /* Assets.xcassets */,
+				4C2122E31E6E8FA500572DBD /* Info.plist */,
+				FA0FC2162066B38A001832FC /* PieChartViewController.swift */,
+				FA6723DD20675D8700D438C0 /* TabVlrViewController.swift */,
+				FA0B477A206555A400AF987E /* TableViewController.swift */,
+				4C2122F41E6E93DF00572DBD /* LaunchScreen.xib */,
+				4C2122E41E6E8FA500572DBD /* ListViewController.swift */,
+				4C2122EC1E6E8FC300572DBD /* Main.storyboard */,
+				4C2122E51E6E8FA500572DBD /* ViewController.swift */,
+				F8CE39F61F35AE3A00CF74BA /* LimitedTabPageViewController.swift */,
+				F8CE39F81F35AE6500CF74BA /* InfiniteTabPageViewController.swift */,
+			);
+			name = TabPageViewController;
+			sourceTree = "<group>";
+		};
+		4C2122F11E6E91A400572DBD /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C2122F21E6E91FA00572DBD /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		61E6C17D363FCAC24FB8F22C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA6723D32067591800D438C0 /* DropDown.framework */,
+				382306294FDBC1E1944959DF /* Pods_TabPageViewController.framework */,
+				AC9BD18AB1D4DC2B4A97F273 /* Pods_TabPageViewControllerDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA0B476C2065545000AF987E /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B4770206554DA00AF987E /* Cellbcth.swift */,
+				FA6723E120675E7B00D438C0 /* cellvlr.swift */,
+			);
+			name = cell;
+			sourceTree = "<group>";
+		};
+		FA0B476D2065546000AF987E /* design */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B47732065550300AF987E /* DesignLabel.swift */,
+				FA0B47742065550300AF987E /* DesignButton.swift */,
+				FA0B47722065550300AF987E /* DesignTextField.swift */,
+				FA0B47752065550300AF987E /* DesignView.swift */,
+				FA0B476E2065547F00AF987E /* CardView.swift */,
+			);
+			name = design;
+			sourceTree = "<group>";
+		};
+		FA0B477C20656D2400AF987E /* obj */ = {
+			isa = PBXGroup;
+			children = (
+				FA0B477D20656D3100AF987E /* User.swift */,
+				FA6723DF20675D8F00D438C0 /* BcvlrObj.swift */,
+				FA0B477F20656FD900AF987E /* BcthObj.swift */,
+			);
+			name = obj;
+			sourceTree = "<group>";
+		};
+		FA0FBE512066AB9E001832FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0FBE562066AB9E001832FC /* Charts.framework */,
+				FA0FBE582066AB9E001832FC /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA0FBE5A2066ABD0001832FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0FBE5F2066ABD0001832FC /* Charts.framework */,
+				FA0FBE612066ABD0001832FC /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA0FC2052066B325001832FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA0FC20A2066B325001832FC /* Charts.framework */,
+				FA0FC20C2066B325001832FC /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		OBJ_10 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FA0FBE502066AB9E001832FC /* Charts.xcodeproj */,
+				FA0FBE592066ABD0001832FC /* Charts.xcodeproj */,
+				OBJ_11 /* TabPageViewControllerTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		OBJ_11 /* TabPageViewControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_12 /* TabPageViewControllerTests.swift */,
+			);
+			name = TabPageViewControllerTests;
+			path = Tests/TabPageViewControllerTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		OBJ_13 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				OBJ_14 /* TabPageViewController.framework */,
+				4C2122CF1E6E8E9700572DBD /* TabPageViewControllerDemo.app */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		OBJ_5 = {
+			isa = PBXGroup;
+			children = (
+				FA0FC2042066B325001832FC /* Charts.xcodeproj */,
+				4C2122CA1E6E8E5C00572DBD /* Demo */,
+				OBJ_13 /* Products */,
+				OBJ_7 /* Sources */,
+				OBJ_10 /* Tests */,
+				2134AD445EFBF67840C688CF /* Pods */,
+				61E6C17D363FCAC24FB8F22C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		OBJ_7 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				4C2122F11E6E91A400572DBD /* Supporting Files */,
+				OBJ_8 /* TabPageViewController */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		OBJ_8 /* TabPageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4C2122AA1E6E8AF300572DBD /* TabCollectionCell.swift */,
+				4C2122AB1E6E8AF300572DBD /* TabCollectionCell.xib */,
+				4C2122AC1E6E8AF300572DBD /* TabPageOption.swift */,
+				OBJ_9 /* TabPageViewController.swift */,
+				4C2122AE1E6E8AF300572DBD /* TabView.swift */,
+				4C2122AF1E6E8AF300572DBD /* TabView.xib */,
+			);
+			name = TabPageViewController;
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C2122CE1E6E8E9700572DBD /* TabPageViewControllerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C2122DE1E6E8E9700572DBD /* Build configuration list for PBXNativeTarget "TabPageViewControllerDemo" */;
+			buildPhases = (
+				A0764000AEFD142D3136B8D5 /* [CP] Check Pods Manifest.lock */,
+				4C2122CB1E6E8E9700572DBD /* Sources */,
+				4C2122CC1E6E8E9700572DBD /* Frameworks */,
+				4C2122CD1E6E8E9700572DBD /* Resources */,
+				4C4753CE1E7159C600D9DD5C /* Embed Frameworks */,
+				9BD5012EAE9557395E4E2231 /* [CP] Embed Pods Frameworks */,
+				E90960931017863FDB3C3336 /* [CP] Copy Pods Resources */,
+				FA6723D52067595D00D438C0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C4753CD1E7159C600D9DD5C /* PBXTargetDependency */,
+				FA0FC2142066B365001832FC /* PBXTargetDependency */,
+			);
+			name = TabPageViewControllerDemo;
+			productName = TabPageViewControllerDemo;
+			productReference = 4C2122CF1E6E8E9700572DBD /* TabPageViewControllerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		OBJ_16 /* TabPageViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = OBJ_17 /* Build configuration list for PBXNativeTarget "TabPageViewController" */;
+			buildPhases = (
+				73551F5271FAF8CBAF74ACBC /* [CP] Check Pods Manifest.lock */,
+				OBJ_20 /* Sources */,
+				OBJ_22 /* Frameworks */,
+				4C2122FD1E6EA1E800572DBD /* Resources */,
+				3F4321E4DF646E9E86F46034 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TabPageViewController;
+			productName = TabPageViewController;
+			productReference = OBJ_14 /* TabPageViewController.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		OBJ_1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 9999;
+				TargetAttributes = {
+					4C2122CE1E6E8E9700572DBD = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = AW2QKY6358;
+						ProvisioningStyle = Automatic;
+					};
+					OBJ_16 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = OBJ_2 /* Build configuration list for PBXProject "DSS9" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = OBJ_5;
+			productRefGroup = OBJ_13 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FA0FC2052066B325001832FC /* Products */;
+					ProjectRef = FA0FC2042066B325001832FC /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = FA0FBE5A2066ABD0001832FC /* Products */;
+					ProjectRef = FA0FBE592066ABD0001832FC /* Charts.xcodeproj */;
+				},
+				{
+					ProductGroup = FA0FBE512066AB9E001832FC /* Products */;
+					ProjectRef = FA0FBE502066AB9E001832FC /* Charts.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				OBJ_16 /* TabPageViewController */,
+				4C2122CE1E6E8E9700572DBD /* TabPageViewControllerDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FA0FBE562066AB9E001832FC /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = FA0FBE552066AB9E001832FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0FBE582066AB9E001832FC /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = FA0FBE572066AB9E001832FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0FBE5F2066ABD0001832FC /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = FA0FBE5E2066ABD0001832FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0FBE612066ABD0001832FC /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = FA0FBE602066ABD0001832FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0FC20A2066B325001832FC /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = FA0FC2092066B325001832FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FA0FC20C2066B325001832FC /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = FA0FC20B2066B325001832FC /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C2122CD1E6E8E9700572DBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2122FA1E6E9AAE00572DBD /* Main.storyboard in Resources */,
+				4C2122F91E6E9AA800572DBD /* LaunchScreen.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C2122FD1E6EA1E800572DBD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C2122FE1E6EA1FB00572DBD /* TabCollectionCell.xib in Resources */,
+				4C2123001E6EA1FB00572DBD /* TabView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F4321E4DF646E9E86F46034 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TabPageViewController/Pods-TabPageViewController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73551F5271FAF8CBAF74ACBC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9BD5012EAE9557395E4E2231 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TabPageViewControllerDemo/Pods-TabPageViewControllerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A0764000AEFD142D3136B8D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E90960931017863FDB3C3336 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TabPageViewControllerDemo/Pods-TabPageViewControllerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6723D52067595D00D438C0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"/Users/macbook/Documents/Working/DSS9 2/Carthage/Build/iOS/DropDown.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C2122CB1E6E8E9700572DBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA6723DC20675B4E00D438C0 /* Cellbcth.swift in Sources */,
+				FA6723E320675FAF00D438C0 /* BcvlrObj.swift in Sources */,
+				F8CE39F71F35AE3A00CF74BA /* LimitedTabPageViewController.swift in Sources */,
+				FA6723E420675FB300D438C0 /* TabVlrViewController.swift in Sources */,
+				FA6723D920675AC400D438C0 /* TableViewController.swift in Sources */,
+				4C2122F71E6E9A9500572DBD /* ListViewController.swift in Sources */,
+				4C2122F81E6E9A9500572DBD /* ViewController.swift in Sources */,
+				FA6723DB20675AED00D438C0 /* User.swift in Sources */,
+				FA6723E520675FCA00D438C0 /* cellvlr.swift in Sources */,
+				4C2122F61E6E9A9000572DBD /* AppDelegate.swift in Sources */,
+				FA6723DA20675AEA00D438C0 /* BcthObj.swift in Sources */,
+				F8CE39F91F35AE6500CF74BA /* InfiniteTabPageViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		OBJ_20 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 0;
+			files = (
+				4C2122B11E6E8AF300572DBD /* TabPageOption.swift in Sources */,
+				FA0B47792065550300AF987E /* DesignView.swift in Sources */,
+				OBJ_21 /* TabPageViewController.swift in Sources */,
+				4C2122B21E6E8AF300572DBD /* TabView.swift in Sources */,
+				4C2122B01E6E8AF300572DBD /* TabCollectionCell.swift in Sources */,
+				FA0B47762065550300AF987E /* DesignTextField.swift in Sources */,
+				FA0B47782065550300AF987E /* DesignButton.swift in Sources */,
+				FA0B47772065550300AF987E /* DesignLabel.swift in Sources */,
+				FA0FC2172066B38A001832FC /* PieChartViewController.swift in Sources */,
+				FA0B476F2065547F00AF987E /* CardView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C4753CD1E7159C600D9DD5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = OBJ_16 /* TabPageViewController */;
+			targetProxy = 4C4753CC1E7159C600D9DD5C /* PBXContainerItemProxy */;
+		};
+		FA0FC2142066B365001832FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Charts;
+			targetProxy = FA0FC2132066B365001832FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C2122EC1E6E8FC300572DBD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C2122ED1E6E8FC300572DBD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4C2122F41E6E93DF00572DBD /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C2122F51E6E93DF00572DBD /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C2122DF1E6E8E9700572DBD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 540B9757A1CF5D8EBE18330E /* Pods-TabPageViewControllerDemo.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AW2QKY6358;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited) ";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Demo/TabPageViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cty9.dss9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		4C2122E01E6E8E9700572DBD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EEDADD6BDC1B4A6264A3A70 /* Pods-TabPageViewControllerDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libstdc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = AW2QKY6358;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited) ";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = Demo/TabPageViewControllerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cty9.dss9;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		OBJ_18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF84C919621433065F39B266 /* Pods-TabPageViewController.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/TabPageViewControllerDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = TabPageViewController;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = TabPageViewController;
+			};
+			name = Debug;
+		};
+		OBJ_19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CD34B000FFB73048135D3B3 /* Pods-TabPageViewController.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "$(SRCROOT)/Demo/TabPageViewControllerDemo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(TOOLCHAIN_DIR)/usr/lib/swift/macosx";
+				OTHER_LDFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = TabPageViewController;
+				PRODUCT_MODULE_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				TARGET_NAME = TabPageViewController;
+			};
+			name = Release;
+		};
+		OBJ_3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				"INFOPLIST_FILE[sdk=*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Debug;
+		};
+		OBJ_4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				OTHER_SWIFT_FLAGS = "-DXcode";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = SWIFT_PACKAGE;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 3.0;
+				USE_HEADERMAP = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C2122DE1E6E8E9700572DBD /* Build configuration list for PBXNativeTarget "TabPageViewControllerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C2122DF1E6E8E9700572DBD /* Debug */,
+				4C2122E01E6E8E9700572DBD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_17 /* Build configuration list for PBXNativeTarget "TabPageViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_18 /* Debug */,
+				OBJ_19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		OBJ_2 /* Build configuration list for PBXProject "DSS9" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				OBJ_3 /* Debug */,
+				OBJ_4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = OBJ_1 /* Project object */;
+}

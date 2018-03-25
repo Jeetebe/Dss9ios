@@ -1,0 +1,23 @@
+PODS:
+  - Charts (3.0.4):
+    - Charts/Core (= 3.0.4)
+  - Charts/Core (3.0.4)
+  - DropDown (2.0.2)
+  - JTAppleCalendar (7.1.4)
+  - TabPageViewController (0.2.7)
+
+DEPENDENCIES:
+  - Charts
+  - DropDown
+  - JTAppleCalendar
+  - TabPageViewController
+
+SPEC CHECKSUMS:
+  Charts: 0705898046257443f0afbbc3179f4b67507b6e48
+  DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
+  JTAppleCalendar: aaeee95e939e0b0a381fb51eb77738bd26bb10f6
+  TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
+
+PODFILE CHECKSUM: 0d05a326521b255fb29a4b3f00ed1fe1a30f6879
+
+COCOAPODS: 1.2.1

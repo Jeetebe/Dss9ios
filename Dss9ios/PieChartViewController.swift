@@ -13,14 +13,22 @@ class PieChartViewController: DemoBaseViewController {
 
     @IBOutlet var chartView: PieChartView!
 
-
+    var list = [SimpleObj]()
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         self.title = "Half Pie Bar Chart"
         
-      
+        list.append(SimpleObj(t: "1",gt: "1",gti: 10))
+        list.append(SimpleObj(t: "2",gt: "1",gti: 20))
+        list.append(SimpleObj(t: "3",gt: "1",gti: 30))
+        
         
         self.setup(pieChartView: chartView)
         
@@ -57,11 +65,11 @@ class PieChartViewController: DemoBaseViewController {
     }
     
     func setDataCount(_ count: Int, range: UInt32) {
-        let entries = (0..<count).map { (i) -> PieChartDataEntry in
+        let entries = (0..<list.count).map { (i) -> PieChartDataEntry in
             // IMPORTANT: In a PieChart, no values (Entry) should have the same xIndex (even if from different DataSets), since no values can be drawn above each other.
             //return PieChartDataEntry(value: Double(arc4random_uniform(range) + range / 5),
-            return PieChartDataEntry(value: 10,
-                                     label: "1111"
+            return PieChartDataEntry(value: Double(list[i].giatriInt),
+                                     label: list[i].ten
                                    )
         }
         

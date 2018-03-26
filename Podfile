@@ -11,6 +11,8 @@ pod "TabPageViewController"
 pod "DropDown"
 pod 'Charts'
  pod 'JTAppleCalendar'
+pod "McPicker"
 
+pod 'AZDialogView'
 
 end

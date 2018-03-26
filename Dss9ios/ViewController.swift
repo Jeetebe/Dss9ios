@@ -12,6 +12,8 @@ import TabPageViewController
 
 class ViewController: UIViewController {
     
+    
+    let bg = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,7 +22,7 @@ class ViewController: UIViewController {
         let vc1 = storyboard?.instantiateViewController(withIdentifier: "tabbcth") as! TabBcthViewController
         //vc1.view.backgroundColor = UIColor.blue
         //vc1.page.text = "page1"
-        let vc2 = storyboard?.instantiateViewController(withIdentifier: "2_1") as! ViewController2_1
+        let vc2 = storyboard?.instantiateViewController(withIdentifier: "tabvlr") as! TabVlrViewController
         //vc2.view.backgroundColor = UIColor.yellow
         //vc2.page.text = "page2"
         let vc3 = storyboard?.instantiateViewController(withIdentifier: "2_1") as! ViewController2_1
@@ -31,11 +33,11 @@ class ViewController: UIViewController {
         //tc.displayControllerWithIndex(1, direction: .forward, animated: false)
         
         var option = TabPageOption()
-        option.currentColor = UIColor.red
-        option.tabBackgroundColor = UIColor.white
+        option.currentColor = UIColor.white
+        option.tabBackgroundColor = bg
         option.tabWidth = view.frame.width / CGFloat(tc.tabItems.count)
         tc.option = option
-        self.navigationItem.title = "テスト"
+        //self.navigationItem.title = "テスト"
         
         self.addChildViewController(tc)
         self.view.addSubview(tc.view)

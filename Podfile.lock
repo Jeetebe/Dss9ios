@@ -1,23 +1,29 @@
 PODS:
+  - AZDialogView (1.2.1)
   - Charts (3.0.4):
     - Charts/Core (= 3.0.4)
   - Charts/Core (3.0.4)
   - DropDown (2.0.2)
   - JTAppleCalendar (7.1.4)
+  - McPicker (0.5.2)
   - TabPageViewController (0.2.7)
 
 DEPENDENCIES:
+  - AZDialogView
   - Charts
   - DropDown
   - JTAppleCalendar
+  - McPicker
   - TabPageViewController
 
 SPEC CHECKSUMS:
+  AZDialogView: 75a481ef11e78b047e9d7d212a83b76a8d91627f
   Charts: 0705898046257443f0afbbc3179f4b67507b6e48
   DropDown: 75562633a203f57a917021b4edb96c76f293b0ec
   JTAppleCalendar: aaeee95e939e0b0a381fb51eb77738bd26bb10f6
+  McPicker: 3c21f279480d04ba7f8a4ae8445f59c7e0931a99
   TabPageViewController: c37a1257a50c2b50712dde61bf499768eee95b67
 
-PODFILE CHECKSUM: 0d05a326521b255fb29a4b3f00ed1fe1a30f6879
+PODFILE CHECKSUM: 1332e06f1c9900bf1fe779fb01bce4995ec678de
 
 COCOAPODS: 1.2.1

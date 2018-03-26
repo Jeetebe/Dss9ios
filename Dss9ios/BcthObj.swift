@@ -14,15 +14,15 @@ struct BcthInfo: Codable {
     let quy, thangTruoc, namTruoc: Int
     let tenNhom: String
     let loaibc, isSum: Int
-    let uocTinhCkn, uocTinhGiamTru: UocTinh
-    let soLieuTongHopLuc: SoLieuTongHopLuc
+    let uocTinhCkn, uocTinhGiamTru: String
+    let soLieuTongHopLuc: String
     let stt: Int
     let donVi: String
-    let dvt: Dvt
+    let dvt: String
     let groupName, keHoachThang, thucHienThang, phanTramThucHienThang: String
     let keHoachQuy, thucHienQuy, phanTramThucHienQuy, keHoachNam: String
     let thucHienNam, phanTramThucHienNam: String
-    let ssBqThangHienTai: SoLieuTongHopLuc
+    let ssBqThangHienTai: String
     let ssBqThangTruoc, ssBqTocDoTangThangHienTai, ssBqThangNamHienTai, ssBqThangNamTruoc: String
     let ssBqTocDoTangThangNamTruoc, ssBqLuykeNamHienTai, ssBqLuykeNamTruoc, ssBqLuykeTocDoTangTruong: String
     let ssBqNamHienTai, ssBqNamTruoc, ssBqTocDoTangTruong, idx: String

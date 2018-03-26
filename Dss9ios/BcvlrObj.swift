@@ -12,19 +12,19 @@ struct BcvlObj: Codable {
 struct BcvlrInfo: Codable {
     let nam, thang, mucquyen, istrungtam: Int
     let quy, thangTruoc, namTruoc: Int
-    let tenNhom, loaibc: GroupName
+    let tenNhom, loaibc: String
     let isSum: Int
-    let soLieuTongHopLuc: GroupName
+    let soLieuTongHopLuc: String
     let stt: Int
     let donVi: String
-    let dvt: Dvt
-    let groupName: GroupName
+    let dvt: String
+    let groupName: String
     let keHoachThang, thucHienThang, phanTramThucHienThang, keHoachQuy: String
     let thucHienQuy, phanTramThucHienQuy: String
-    let keHoachNam: KeHoachNam
+    let keHoachNam: String
     let thucHienNam: String
-    let phanTramThucHienNam: PhanTramThucHienNam
-    let ssBqThangHienTai: GroupName
+    let phanTramThucHienNam: String
+    let ssBqThangHienTai: String
     let ssBqThangTruoc, ssBqTocDoTangThangHienTai, ssBqThangNamHienTai, ssBqThangNamTruoc: String
     let ssBqTocDoTangThangNamTruoc, ssBqLuykeNamHienTai, ssBqLuykeNamTruoc, ssBqLuykeTocDoTangTruong: String
     let ssBqNamHienTai, ssBqNamTruoc, ssBqTocDoTangTruong, idx: String
@@ -37,8 +37,8 @@ struct BcvlrInfo: Codable {
     let d12, d13, d14, d15: String
     let d16, d17, d18, d19: String
     let d20, d21, d22, d23: String
-    let d24, d25, d26, d27: D24
-    let d28, d29, d30, d31: D24
+    let d24, d25, d26, d27: String
+    let d28, d29, d30, d31: String
     let tbLktTruocCungky, ssTBLktTruocCungky: String
     
     enum CodingKeys: String, CodingKey {

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		87D0F8AF73E4C1BCFDF1733F /* Pods_Dss9ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F224CD6F32E72E6BBC4D8F06 /* Pods_Dss9ios.framework */; };
 		FA2CE6D920694437001D49F3 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2CE6D820694437001D49F3 /* SearchViewController.swift */; };
+		FA4CE532206AA676007C9ED6 /* LineChart1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4CE531206AA675007C9ED6 /* LineChart1ViewController.swift */; };
+		FA5D89BA206A7E6500591864 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D89B7206A7E6500591864 /* DesignButton.swift */; };
+		FA5D89BB206A7E6500591864 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D89B8206A7E6500591864 /* DesignTextField.swift */; };
+		FA5D89BC206A7E6500591864 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D89B9206A7E6500591864 /* DesignView.swift */; };
 		FAA7E8D52067A0AB00C3E13D /* ViewController2_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E8D42067A0AB00C3E13D /* ViewController2_1.swift */; };
 		FAA7F1A22067A72400C3E13D /* BcthObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F19D2067A72200C3E13D /* BcthObj.swift */; };
 		FAA7F1A32067A72400C3E13D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F19E2067A72300C3E13D /* User.swift */; };
@@ -39,6 +43,10 @@
 		559D81E96EE1E38D36F5ECB7 /* Pods-Dss9ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Dss9ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-Dss9ios/Pods-Dss9ios.release.xcconfig"; sourceTree = "<group>"; };
 		F224CD6F32E72E6BBC4D8F06 /* Pods_Dss9ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Dss9ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA2CE6D820694437001D49F3 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA4CE531206AA675007C9ED6 /* LineChart1ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineChart1ViewController.swift; sourceTree = "<group>"; };
+		FA5D89B7206A7E6500591864 /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
+		FA5D89B8206A7E6500591864 /* DesignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
+		FA5D89B9206A7E6500591864 /* DesignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
 		FAA7E8D42067A0AB00C3E13D /* ViewController2_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2_1.swift; sourceTree = "<group>"; };
 		FAA7F19D2067A72200C3E13D /* BcthObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BcthObj.swift; sourceTree = "<group>"; };
 		FAA7F19E2067A72300C3E13D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -95,6 +103,49 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA5D89AF206A7DF200591864 /* obj */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7F19D2067A72200C3E13D /* BcthObj.swift */,
+				FAF213142067ECA000DD997A /* MyObj.swift */,
+				FAA7F19E2067A72300C3E13D /* User.swift */,
+				FAA7F1A02067A72300C3E13D /* BcvlrObj.swift */,
+			);
+			path = obj;
+			sourceTree = "<group>";
+		};
+		FA5D89B0206A7DFC00591864 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				FABE2DEB2067999700A7674E /* ViewController.swift */,
+				FACC30E1206802CC0056862D /* PieChartViewController.swift */,
+				FA4CE531206AA675007C9ED6 /* LineChart1ViewController.swift */,
+				FAA7E8D42067A0AB00C3E13D /* ViewController2_1.swift */,
+				FAF2130B2067D63D00DD997A /* TabBcthViewController.swift */,
+				FA2CE6D820694437001D49F3 /* SearchViewController.swift */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		FA5D89B1206A7E0B00591864 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FAA7F1A12067A72400C3E13D /* Cellbcth.swift */,
+				FAA7F19F2067A72300C3E13D /* cellvlr.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		FA5D89B6206A7E6500591864 /* Design */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D89B7206A7E6500591864 /* DesignButton.swift */,
+				FA5D89B8206A7E6500591864 /* DesignTextField.swift */,
+				FA5D89B9206A7E6500591864 /* DesignView.swift */,
+			);
+			path = Design;
+			sourceTree = "<group>";
+		};
 		FABE2DDD2067999700A7674E = {
 			isa = PBXGroup;
 			children = (
@@ -116,25 +167,18 @@
 		FABE2DE82067999700A7674E /* Dss9ios */ = {
 			isa = PBXGroup;
 			children = (
+				FA5D89B6206A7E6500591864 /* Design */,
+				FA5D89B1206A7E0B00591864 /* cell */,
+				FA5D89B0206A7DFC00591864 /* controller */,
+				FA5D89AF206A7DF200591864 /* obj */,
 				FACC30CF206800840056862D /* calendar */,
-				FAA7F19D2067A72200C3E13D /* BcthObj.swift */,
-				FAA7F1A02067A72300C3E13D /* BcvlrObj.swift */,
-				FAA7F1A12067A72400C3E13D /* Cellbcth.swift */,
-				FAA7F19F2067A72300C3E13D /* cellvlr.swift */,
-				FAA7F19E2067A72300C3E13D /* User.swift */,
 				FABE2DE92067999700A7674E /* AppDelegate.swift */,
-				FAA7E8D42067A0AB00C3E13D /* ViewController2_1.swift */,
-				FABE2DEB2067999700A7674E /* ViewController.swift */,
-				FACC30E1206802CC0056862D /* PieChartViewController.swift */,
 				FABE2DED2067999800A7674E /* Main.storyboard */,
-				FA2CE6D820694437001D49F3 /* SearchViewController.swift */,
-				FAF2130B2067D63D00DD997A /* TabBcthViewController.swift */,
 				FAF213102067E07B00DD997A /* TabVlrViewController.swift */,
 				FABE2DF02067999800A7674E /* Assets.xcassets */,
 				FABE2DF22067999800A7674E /* LaunchScreen.storyboard */,
 				FABE2DF52067999800A7674E /* Info.plist */,
 				FAF213122067E4D300DD997A /* Utils.swift */,
-				FAF213142067ECA000DD997A /* MyObj.swift */,
 			);
 			path = Dss9ios;
 			sourceTree = "<group>";
@@ -282,15 +326,19 @@
 				FAA7E8D52067A0AB00C3E13D /* ViewController2_1.swift in Sources */,
 				FACC30D5206800840056862D /* PopupContainer.swift in Sources */,
 				FABE2DEC2067999700A7674E /* ViewController.swift in Sources */,
+				FA5D89BA206A7E6500591864 /* DesignButton.swift in Sources */,
 				FA2CE6D920694437001D49F3 /* SearchViewController.swift in Sources */,
 				FAF213112067E07B00DD997A /* TabVlrViewController.swift in Sources */,
+				FA5D89BC206A7E6500591864 /* DesignView.swift in Sources */,
 				FACC30DB206800E80056862D /* AnimationClass.swift in Sources */,
 				FACC30E2206802CC0056862D /* PieChartViewController.swift in Sources */,
+				FA5D89BB206A7E6500591864 /* DesignTextField.swift in Sources */,
 				FAA7F1A32067A72400C3E13D /* User.swift in Sources */,
 				FABE2DEA2067999700A7674E /* AppDelegate.swift in Sources */,
 				FAA7F1A22067A72400C3E13D /* BcthObj.swift in Sources */,
 				FAF213132067E4D300DD997A /* Utils.swift in Sources */,
 				FAA7F1A52067A72400C3E13D /* BcvlrObj.swift in Sources */,
+				FA4CE532206AA676007C9ED6 /* LineChart1ViewController.swift in Sources */,
 				FAF2130C2067D63D00DD997A /* TabBcthViewController.swift in Sources */,
 				FACC30D9206800C10056862D /* CellView.swift in Sources */,
 				FAA7F1A42067A72400C3E13D /* cellvlr.swift in Sources */,

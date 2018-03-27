@@ -87,7 +87,6 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
             print("chon: \(self.chon)")
             self.mytableBcth.reloadData()
             
-            
         }
     }
     

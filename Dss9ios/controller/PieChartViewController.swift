@@ -46,12 +46,11 @@ class PieChartViewController: DemoBaseViewController {
         // entry label styling
         chartView.entryLabelColor = .white
        // chartView.entryLabelFont = .systemFont(ofSize: 12, weight: .light)
+
         
-//        sliderX.value = 4
-//        sliderY.value = 100
-//        self.slidersValueChanged(nil)
-         self.updateChartData()
-        chartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
+         chartView.animate(xAxisDuration: 1.4, easingOption: .easeOutBack)
+        
+        getdata ()
     }
     
     override func updateChartData() {
@@ -97,11 +96,40 @@ class PieChartViewController: DemoBaseViewController {
         //data.setValueFont(.systemFont(ofSize: 11, weight: .light))
         data.setValueTextColor(.white)
         
-        chartView.chartDescription?.text = "1122346676"
+        chartView.chartDescription?.text = "Công ty - VLR"
         chartView.chartDescription?.font = UIFont(name: "HelveticaNeue-Light", size: 12.0)!
         chartView.chartDescription?.enabled = true
         chartView.data = data
         chartView.highlightValues(nil)
+    }
+    
+    func getdata ()
+    {
+        
+        guard  let url_vlr = URL(string: "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=VLR") else {
+            return
+        }
+        
+        
+        let task = URLSession.shared.dataTask(with: url_vlr) { (data, _, _) in
+            guard let data = data else { return }
+            print(data)
+            do {
+                let bcth = try JSONDecoder().decode(BcvlObj.self, from: data)
+                //et user = User(data)
+                //print(user.userInfo.tendangnhap)
+                DispatchQueue.main.async {
+                  
+                    self.list = Utils.listVLR2simple(listsource: bcth.bcvlrInfo)
+                    print("size list: \(self.list.count)")
+                    self.updateChartData()
+                }
+            } catch {
+                print("error getdata")
+            }
+        }
+        task.resume()
+        
     }
     
    

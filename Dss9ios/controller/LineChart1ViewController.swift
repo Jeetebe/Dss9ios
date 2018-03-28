@@ -14,7 +14,15 @@ class LineChart1ViewController: DemoBaseViewController {
     @IBOutlet var chartView: LineChartView!
   
      var list = [SimpleObj]()
+    
+    var row = 0
+    var ten = ""
 
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -61,18 +69,6 @@ class LineChart1ViewController: DemoBaseViewController {
         leftAxis.drawLimitLinesBehindDataEnabled = true
         
         chartView.rightAxis.enabled = false
-        
-        //[_chartView.viewPortHandler setMaximumScaleY: 2.f];
-        //[_chartView.viewPortHandler setMaximumScaleX: 2.f];
-
-//        let marker = BalloonMarker(color: UIColor(white: 180/255, alpha: 1),
-//                                   font: .systemFont(ofSize: 12),
-//                                   textColor: .white,
-//                                   insets: UIEdgeInsets(top: 8, left: 8, bottom: 20, right: 8))
-//        marker.chartView = chartView
-//        marker.minimumSize = CGSize(width: 80, height: 40)
-//        chartView.marker = marker
-        
         chartView.legend.form = .line
      
         //slidersValueChanged(nil)
@@ -99,7 +95,7 @@ class LineChart1ViewController: DemoBaseViewController {
             return ChartDataEntry(x: Double(i), y: Double( self.list[i].giatriInt))
         }
         
-        let set1 = LineChartDataSet(values: values, label: "Công ty - VLR")
+        let set1 = LineChartDataSet(values: values, label: self.ten+" - VLR")
         set1.drawIconsEnabled = false
         
         set1.lineDashLengths = [5, 2.5]
@@ -145,7 +141,7 @@ class LineChart1ViewController: DemoBaseViewController {
                 DispatchQueue.main.async {
                    
                     let temp = Utils.listVLR2myObj(listsource: bcth.bcvlrInfo)
-                    self.list = Utils.Myobj2Simple4Linechart(listsource: temp)
+                    self.list = Utils.Myobj2Simple4Linechart(listsource: temp, position: self.row)
                     
                     
                     print("size list: \(self.list.count)")

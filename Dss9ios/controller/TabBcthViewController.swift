@@ -53,7 +53,7 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
         mytableBcth.rowHeight = 130
         mytableBcth.estimatedRowHeight = 140
         
-        setupdoituong()
+        //setupdoituong()
         getdata ()
         
         currentDate = Date()
@@ -157,6 +157,13 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
                     print("size: \(self.list.count)")
                     self.list = bcth.bcthInfo
                     self.mytableBcth.reloadData()
+                    
+                    self.listloai.removeAll()
+                    self.listloai.append("Tháng " + String(bcth.bcthInfo[0].thang))
+                    self.listloai.append("Quí " + String(bcth.bcthInfo[0].quy))
+                    self.listloai.append("Năm " + String(bcth.bcthInfo[0].nam))
+                    self.setupdoituong()
+                    
                 }
             } catch {
                 print("error")

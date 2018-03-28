@@ -13,6 +13,7 @@
 		FA5D89BA206A7E6500591864 /* DesignButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D89B7206A7E6500591864 /* DesignButton.swift */; };
 		FA5D89BB206A7E6500591864 /* DesignTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D89B8206A7E6500591864 /* DesignTextField.swift */; };
 		FA5D89BC206A7E6500591864 /* DesignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5D89B9206A7E6500591864 /* DesignView.swift */; };
+		FA994803206BDB150072C0C5 /* FilterObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA994802206BDB150072C0C5 /* FilterObj.swift */; };
 		FAA7E8D52067A0AB00C3E13D /* ViewController2_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7E8D42067A0AB00C3E13D /* ViewController2_1.swift */; };
 		FAA7F1A22067A72400C3E13D /* BcthObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F19D2067A72200C3E13D /* BcthObj.swift */; };
 		FAA7F1A32067A72400C3E13D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA7F19E2067A72300C3E13D /* User.swift */; };
@@ -47,6 +48,7 @@
 		FA5D89B7206A7E6500591864 /* DesignButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignButton.swift; sourceTree = "<group>"; };
 		FA5D89B8206A7E6500591864 /* DesignTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignTextField.swift; sourceTree = "<group>"; };
 		FA5D89B9206A7E6500591864 /* DesignView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignView.swift; sourceTree = "<group>"; };
+		FA994802206BDB150072C0C5 /* FilterObj.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterObj.swift; sourceTree = "<group>"; };
 		FAA7E8D42067A0AB00C3E13D /* ViewController2_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2_1.swift; sourceTree = "<group>"; };
 		FAA7F19D2067A72200C3E13D /* BcthObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BcthObj.swift; sourceTree = "<group>"; };
 		FAA7F19E2067A72300C3E13D /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				FAF213142067ECA000DD997A /* MyObj.swift */,
 				FAA7F19E2067A72300C3E13D /* User.swift */,
 				FAA7F1A02067A72300C3E13D /* BcvlrObj.swift */,
+				FA994802206BDB150072C0C5 /* FilterObj.swift */,
 			);
 			path = obj;
 			sourceTree = "<group>";
@@ -333,6 +336,7 @@
 				FACC30DB206800E80056862D /* AnimationClass.swift in Sources */,
 				FACC30E2206802CC0056862D /* PieChartViewController.swift in Sources */,
 				FA5D89BB206A7E6500591864 /* DesignTextField.swift in Sources */,
+				FA994803206BDB150072C0C5 /* FilterObj.swift in Sources */,
 				FAA7F1A32067A72400C3E13D /* User.swift in Sources */,
 				FABE2DEA2067999700A7674E /* AppDelegate.swift in Sources */,
 				FAA7F1A22067A72400C3E13D /* BcthObj.swift in Sources */,

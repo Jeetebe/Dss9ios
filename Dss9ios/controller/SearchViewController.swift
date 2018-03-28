@@ -9,8 +9,14 @@
 import UIKit
 import McPicker
 
+protocol Protocol {
+    func passingDataBack(withString: String)
+    
+}
 class SearchViewController: UIViewController {
 
+    var proto: Protocol!
+    var filter: FilterObj!
     
     @IBOutlet weak var btnnam: UIButton!
     
@@ -24,6 +30,10 @@ class SearchViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func xemclick(_ sender: Any) {
+        proto.passingDataBack(withString: "tessssss")
+        self.dismiss(animated: true, completion: nil)
+    }
     
     let dataNam: [[String]] = [["Năm 2018", "Năm 2017", "Năm 2016"]]
      let dataThang: [[String]] = [["Tháng 1", "Tháng 2", "Tháng 3","Tháng 4"]]

@@ -11,8 +11,18 @@ struct TinhObj: Codable {
 
 struct TinhInfo: Codable {
     let idTinh: Int
-    let codeTinh, tenTinh: String
+    let codeTinh : String
+    let tenTinh: String
     let flag: Bool
+
+    public init(idTinh: Int, codeTinh : String, tenTinh: String, flag: Bool) {
+        self.idTinh = idTinh
+        self.codeTinh  = codeTinh
+        self.tenTinh = tenTinh
+        self.flag = flag
+    }
+
+    
     
     enum CodingKeys: String, CodingKey {
         case idTinh = "id_tinh"

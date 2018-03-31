@@ -300,7 +300,7 @@
                                         </constraints>
                                         <state key="normal" image="icons8-pie_chart"/>
                                         <connections>
-                                            <segue destination="UTg-Wn-dZ4" kind="show" id="bf0-0d-gip"/>
+                                            <segue destination="UTg-Wn-dZ4" kind="show" identifier="showpie" id="bf0-0d-gip"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xNQ-Uf-Whl">
@@ -366,7 +366,7 @@
         <!--Pie Chart View Controller-->
         <scene sceneID="Vs2-Tn-ewN">
             <objects>
-                <viewController id="UTg-Wn-dZ4" customClass="PieChartViewController" customModule="Dss9ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PieChartViewController" id="UTg-Wn-dZ4" customClass="PieChartViewController" customModule="Dss9ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UDL-pt-n2T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

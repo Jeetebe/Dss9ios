@@ -12,6 +12,8 @@ class Utils {
         {
             listtinh.append(obj.tenTinh)
         }
+        
+        
         return listtinh
     }
     

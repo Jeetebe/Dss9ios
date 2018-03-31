@@ -14,6 +14,7 @@ class LineChart1ViewController: DemoBaseViewController {
     @IBOutlet var chartView: LineChartView!
   
      var list = [SimpleObj]()
+    var myFilter = FilterObj()
     
     var row = 0
     var ten = ""
@@ -95,7 +96,8 @@ class LineChart1ViewController: DemoBaseViewController {
             return ChartDataEntry(x: Double(i), y: Double( self.list[i].giatriInt))
         }
         
-        let set1 = LineChartDataSet(values: values, label: self.ten+" - VLR")
+        let ghichu = self.ten + ": " + myFilter.loai + " - tháng "  + myFilter.thang + " năm " + myFilter.nam
+        let set1 = LineChartDataSet(values: values, label: ghichu)
         set1.drawIconsEnabled = false
         
         set1.lineDashLengths = [5, 2.5]
@@ -125,8 +127,10 @@ class LineChart1ViewController: DemoBaseViewController {
     
     func getdata ()
     {
-        
-        guard  let url_vlr = URL(string: "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=VLR") else {
+        let url = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
+        print("url vlr\(url)")
+        guard  let url_vlr = URL(string: url)
+            else {
             return
         }
         

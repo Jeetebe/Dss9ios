@@ -14,6 +14,7 @@ class PieChartViewController: DemoBaseViewController {
     @IBOutlet var chartView: PieChartView!
 
     var list = [SimpleObj]()
+    var myFilter = FilterObj()
     
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -95,8 +96,8 @@ class PieChartViewController: DemoBaseViewController {
         
         //data.setValueFont(.systemFont(ofSize: 11, weight: .light))
         data.setValueTextColor(.white)
-        
-        chartView.chartDescription?.text = "Công ty - VLR"
+          let ghichu = myFilter.tentinh + ": " + myFilter.loai + " - tháng "  + myFilter.thang + " năm " + myFilter.nam
+        chartView.chartDescription?.text = ghichu
         chartView.chartDescription?.font = UIFont(name: "HelveticaNeue-Light", size: 12.0)!
         chartView.chartDescription?.enabled = true
         chartView.data = data
@@ -105,9 +106,11 @@ class PieChartViewController: DemoBaseViewController {
     
     func getdata ()
     {
-        
-        guard  let url_vlr = URL(string: "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=VLR") else {
-            return
+        let url = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
+        print("url vlr\(url)")
+        guard  let url_vlr = URL(string: url)
+            else {
+                return
         }
         
         
@@ -122,6 +125,12 @@ class PieChartViewController: DemoBaseViewController {
                   
                     self.list = Utils.listVLR2simple(listsource: bcth.bcvlrInfo)
                     print("size list: \(self.list.count)")
+                    if self.list.count != 12
+                    {
+                        self.list.removeLast();
+                        self.list.removeLast();
+                    }
+                    
                     self.updateChartData()
                 }
             } catch {

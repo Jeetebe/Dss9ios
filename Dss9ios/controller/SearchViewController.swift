@@ -41,7 +41,13 @@ class SearchViewController: UIViewController {
     let dataNam: [[String]] = [["2018", "2017", "2016"]]
      let dataThang: [[String]] = [["1", "2", "3","4","5", "6", "7","8","9", "10", "11","12"]]
     var dataTinh: [String] = [] //= [["Tất cả","An Giang", "Bạc Liêu", "Bến Tre","Cà Mau","Cần Thơ"]]
-    let dataLoai: [[String]] = [["1","2"]]
+    var dataLoai: [[String]] = [[]]
+    
+    
+    let tl_vlr = ["Thuê Bao VLR","Thuê Bao 3K3D VLR","Thuê Bao VLR - Bật Máy","Thuê Bao VLR - 3G","Thuê Bao VLR - 4G"]
+    let tlk_vlr = ["VLR","VLR_3K3D","VLR_BatMay","VLR_3G","VLR_4G"]
+    
+    
     
     var listTinhobj = [TinhInfo]()
     
@@ -77,6 +83,7 @@ class SearchViewController: UIViewController {
                 let ind = self?.dataTinh.index(of: name)
                 let tinh: TinhInfo = (self?.listTinhobj[ind!])!
                 self?.newfilter.tinh = String(tinh.idTinh)
+                self?.newfilter.tentinh = name.replacingOccurrences(of: "Tất cả", with: "Công ty")
                 print("id tinh = \(tinh.idTinh)")
             }
             }
@@ -89,7 +96,12 @@ class SearchViewController: UIViewController {
         McPicker.showAsPopover(data:dataLoai, fromViewController: self, sourceView: sender as! UIView, doneHandler: { [weak self] (selections: [Int : String]) -> Void in
             if let name = selections[0] {
                 self?.btnloai.setTitle(name, for: .normal)
-                self?.newfilter.loai = name
+                
+                let ind = self?.tl_vlr.index(of: name)
+                let loai = self?.tlk_vlr[ind!]
+                
+                self?.newfilter.loai = loai!
+                
             }
             }
         )
@@ -99,6 +111,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         getdataTinh ()
+        dataLoai = [tl_vlr]
         
         // Do any additional setup after loading the view.
     }
@@ -124,9 +137,12 @@ class SearchViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     print("size tinh from server: \(tinhobj.tinhInfo.count)")
-                    self.dataTinh = Utils.gettentinh(list: tinhobj.tinhInfo)
-                     print("size tinh: \(self.dataTinh.count)")
                     self.listTinhobj = tinhobj.tinhInfo
+                    let congty = TinhInfo(idTinh: -1, codeTinh : "-1", tenTinh: "Công ty", flag: true)
+                    
+                    self.listTinhobj.append(congty)
+                    self.dataTinh = Utils.gettentinh(list: self.listTinhobj)
+                    print("size tinh: \(self.dataTinh.count)")
                  
                     
                 }

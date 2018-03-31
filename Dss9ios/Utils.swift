@@ -4,6 +4,17 @@ import Foundation
 
 
 class Utils {
+    
+    static func   gettentinh (list: [TinhInfo]) ->[String]
+    {
+        var listtinh = [String]()
+        for obj in list
+        {
+            listtinh.append(obj.tenTinh)
+        }
+        return listtinh
+    }
+    
    static func   getbyloai( items: BcthInfo, loai:Int) -> MyObj {
         var myobj = MyObj ()
         switch loai {

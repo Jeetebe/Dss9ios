@@ -126,7 +126,21 @@ class SimpleObj
         self.giatriInt=gti
     }
 }
+class MyDateObj
+{
+    var nam:String = ""
+    var thang:String = ""
+    var ngay:String = ""
 
+    public init(nam: String = "", thang: String = "", ngay: String = "") {
+        self.nam = nam
+        self.thang = thang
+        self.ngay = ngay
+    }
+
+   
+    
+}
 
 
 

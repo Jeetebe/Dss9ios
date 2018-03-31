@@ -19,6 +19,13 @@ class FilterObj
         self.loai = loai
         self.ngay = ngay
     }
+    public init() {
+        self.nam = ""
+        self.thang = ""
+        self.tinh = ""
+        self.loai = "-1"
+        self.ngay = "40"
+    }
     
     
     

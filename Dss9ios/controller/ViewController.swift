@@ -13,23 +13,26 @@ import TabPageViewController
 class ViewController: UIViewController {
     
     
-    let bg = #colorLiteral(red: 0.1839655188, green: 0.3066258651, blue: 0.6912443329, alpha: 1)
+    let bg = #colorLiteral(red: 0.2447162889, green: 0.3756026192, blue: 0.6181792422, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let tc = TabPageViewController.create()
         //let vc1 = storyboard?.instantiateViewController(withIdentifier: "tabbcth") as! TableViewController
         let vc1 = storyboard?.instantiateViewController(withIdentifier: "tabbcth") as! TabBcthViewController
-        //vc1.view.backgroundColor = UIColor.blue
-        //vc1.page.text = "page1"
-        let vc2 = storyboard?.instantiateViewController(withIdentifier: "tabvlr") as! TabVlrViewController
-        //vc2.view.backgroundColor = UIColor.yellow
-        //vc2.page.text = "page2"
-        let vc3 = storyboard?.instantiateViewController(withIdentifier: "2_1") as! ViewController2_1
-        //vc3.view.backgroundColor = UIColor.green
-        //vc3.page.text = "page3"
         
-        tc.tabItems = [(vc1, "Home"), (vc2, "VLR"), (vc3, "Third")]
+        let vc2 = storyboard?.instantiateViewController(withIdentifier: "tabvlr") as! TabVlrViewController
+       
+        let vc3 = storyboard?.instantiateViewController(withIdentifier: "tabdttt") as! TabDtttViewController
+       
+        let vc4 = storyboard?.instantiateViewController(withIdentifier: "tabdtbh") as! TabDtbhViewController
+        
+        let vc5 = storyboard?.instantiateViewController(withIdentifier: "tabptm") as! TabPtmViewController
+        
+        let vc6 = storyboard?.instantiateViewController(withIdentifier: "tabll") as! TabLLViewController
+        
+        
+        tc.tabItems = [(vc1, "Home"), (vc2, "VLR"), (vc3, "DTTT"), (vc4, "DTBH"), (vc5, "PTM"), (vc6, "LL")]
         //tc.displayControllerWithIndex(1, direction: .forward, animated: false)
         
         var option = TabPageOption()

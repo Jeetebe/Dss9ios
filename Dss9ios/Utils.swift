@@ -110,9 +110,238 @@ class Utils {
             myobj.thuchien = items.thucHienThang
             myobj.kehoach = items.keHoachThang
             myobj.phantram = items.phanTramThucHienThang
+        }
+        
+        return myobj
+    }
+    static func   getbyloai_dttt( items: DtttInfo, loai:Int) -> MyObj {
+        var myobj = MyObj ()
+        switch loai {
             
+        case 40:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+        case 41:
+            myobj.thuchien = items.thucHienQuy
+            myobj.kehoach = items.keHoachQuy
+            myobj.phantram = items.phanTramThucHienQuy
+        case 42:
+            myobj.thuchien = items.thucHienNam
+            myobj.kehoach = items.keHoachNam
+            myobj.phantram = items.phanTramThucHienNam
             
+        case 1: myobj.thuchien = items.d1 ; myobj.phantram = Utils.getlech(d1: "0", d2: "0")
+        case 2: myobj.thuchien = items.d2 ; myobj.phantram = Utils.getlech(d1: items.d1, d2: items.d2)
+        case 3: myobj.thuchien = items.d3 ; myobj.phantram = Utils.getlech(d1: items.d2, d2: items.d3)
+        case 4: myobj.thuchien = items.d4 ; myobj.phantram = Utils.getlech(d1: items.d3, d2: items.d4)
+        case 5: myobj.thuchien = items.d5 ; myobj.phantram = Utils.getlech(d1: items.d4, d2: items.d5)
+        case 6: myobj.thuchien = items.d6 ; myobj.phantram = Utils.getlech(d1: items.d5, d2: items.d6)
+        case 7: myobj.thuchien = items.d7 ; myobj.phantram = Utils.getlech(d1: items.d6, d2: items.d7)
+        case 8: myobj.thuchien = items.d8 ; myobj.phantram = Utils.getlech(d1: items.d7, d2: items.d8)
+        case 9: myobj.thuchien = items.d9 ; myobj.phantram = Utils.getlech(d1: items.d8, d2: items.d9)
+        case 10: myobj.thuchien = items.d10 ; myobj.phantram = Utils.getlech(d1: items.d9, d2: items.d10)
+        case 11: myobj.thuchien = items.d11 ; myobj.phantram = Utils.getlech(d1: items.d10, d2: items.d11)
+        case 12: myobj.thuchien = items.d12 ; myobj.phantram = Utils.getlech(d1: items.d11, d2: items.d12)
+        case 13: myobj.thuchien = items.d13 ; myobj.phantram = Utils.getlech(d1: items.d12, d2: items.d13)
+        case 14: myobj.thuchien = items.d14 ; myobj.phantram = Utils.getlech(d1: items.d13, d2: items.d14)
+        case 15: myobj.thuchien = items.d15 ; myobj.phantram = Utils.getlech(d1: items.d14, d2: items.d15)
+        case 16: myobj.thuchien = items.d16 ; myobj.phantram = Utils.getlech(d1: items.d15, d2: items.d16)
+        case 17: myobj.thuchien = items.d17 ; myobj.phantram = Utils.getlech(d1: items.d16, d2: items.d17)
+        case 18: myobj.thuchien = items.d18 ; myobj.phantram = Utils.getlech(d1: items.d17, d2: items.d18)
+        case 19: myobj.thuchien = items.d19 ; myobj.phantram = Utils.getlech(d1: items.d18, d2: items.d19)
+        case 20: myobj.thuchien = items.d20 ; myobj.phantram = Utils.getlech(d1: items.d19, d2: items.d20)
+        case 21: myobj.thuchien = items.d21 ; myobj.phantram = Utils.getlech(d1: items.d20, d2: items.d21)
+        case 22: myobj.thuchien = items.d22 ; myobj.phantram = Utils.getlech(d1: items.d21, d2: items.d22)
+        case 23: myobj.thuchien = items.d23 ; myobj.phantram = Utils.getlech(d1: items.d22, d2: items.d23)
+        case 24: myobj.thuchien = items.d24 ; myobj.phantram = Utils.getlech(d1: items.d23, d2: items.d24)
+        case 25: myobj.thuchien = items.d25 ; myobj.phantram = Utils.getlech(d1: items.d24, d2: items.d25)
+        case 26: myobj.thuchien = items.d26 ; myobj.phantram = Utils.getlech(d1: items.d25, d2: items.d26)
+        case 27: myobj.thuchien = items.d27 ; myobj.phantram = Utils.getlech(d1: items.d26, d2: items.d27)
+        case 28: myobj.thuchien = items.d28 ; myobj.phantram = Utils.getlech(d1: items.d27, d2: items.d28)
+        case 29: myobj.thuchien = items.d29 ; myobj.phantram = Utils.getlech(d1: items.d28, d2: items.d29)
+        case 30: myobj.thuchien = items.d30 ; myobj.phantram = Utils.getlech(d1: items.d29, d2: items.d30)
+        case 31: myobj.thuchien = items.d31 ; myobj.phantram = Utils.getlech(d1: items.d30, d2: items.d31)
             
+        default:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+            
+        }
+        
+        return myobj
+    }
+    static func   getbyloai_dtbh( items: BcbhInfo, loai:Int) -> MyObj {
+        var myobj = MyObj ()
+        switch loai {
+            
+        case 40:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+        case 41:
+            myobj.thuchien = items.thucHienQuy
+            myobj.kehoach = items.keHoachQuy
+            myobj.phantram = items.phanTramThucHienQuy
+        case 42:
+            myobj.thuchien = items.thucHienNam
+            myobj.kehoach = items.keHoachNam
+            myobj.phantram = items.phanTramThucHienNam
+            
+        case 1: myobj.thuchien = items.d1 ; myobj.phantram = Utils.getlech(d1: "0", d2: "0")
+        case 2: myobj.thuchien = items.d2 ; myobj.phantram = Utils.getlech(d1: items.d1, d2: items.d2)
+        case 3: myobj.thuchien = items.d3 ; myobj.phantram = Utils.getlech(d1: items.d2, d2: items.d3)
+        case 4: myobj.thuchien = items.d4 ; myobj.phantram = Utils.getlech(d1: items.d3, d2: items.d4)
+        case 5: myobj.thuchien = items.d5 ; myobj.phantram = Utils.getlech(d1: items.d4, d2: items.d5)
+        case 6: myobj.thuchien = items.d6 ; myobj.phantram = Utils.getlech(d1: items.d5, d2: items.d6)
+        case 7: myobj.thuchien = items.d7 ; myobj.phantram = Utils.getlech(d1: items.d6, d2: items.d7)
+        case 8: myobj.thuchien = items.d8 ; myobj.phantram = Utils.getlech(d1: items.d7, d2: items.d8)
+        case 9: myobj.thuchien = items.d9 ; myobj.phantram = Utils.getlech(d1: items.d8, d2: items.d9)
+        case 10: myobj.thuchien = items.d10 ; myobj.phantram = Utils.getlech(d1: items.d9, d2: items.d10)
+        case 11: myobj.thuchien = items.d11 ; myobj.phantram = Utils.getlech(d1: items.d10, d2: items.d11)
+        case 12: myobj.thuchien = items.d12 ; myobj.phantram = Utils.getlech(d1: items.d11, d2: items.d12)
+        case 13: myobj.thuchien = items.d13 ; myobj.phantram = Utils.getlech(d1: items.d12, d2: items.d13)
+        case 14: myobj.thuchien = items.d14 ; myobj.phantram = Utils.getlech(d1: items.d13, d2: items.d14)
+        case 15: myobj.thuchien = items.d15 ; myobj.phantram = Utils.getlech(d1: items.d14, d2: items.d15)
+        case 16: myobj.thuchien = items.d16 ; myobj.phantram = Utils.getlech(d1: items.d15, d2: items.d16)
+        case 17: myobj.thuchien = items.d17 ; myobj.phantram = Utils.getlech(d1: items.d16, d2: items.d17)
+        case 18: myobj.thuchien = items.d18 ; myobj.phantram = Utils.getlech(d1: items.d17, d2: items.d18)
+        case 19: myobj.thuchien = items.d19 ; myobj.phantram = Utils.getlech(d1: items.d18, d2: items.d19)
+        case 20: myobj.thuchien = items.d20 ; myobj.phantram = Utils.getlech(d1: items.d19, d2: items.d20)
+        case 21: myobj.thuchien = items.d21 ; myobj.phantram = Utils.getlech(d1: items.d20, d2: items.d21)
+        case 22: myobj.thuchien = items.d22 ; myobj.phantram = Utils.getlech(d1: items.d21, d2: items.d22)
+        case 23: myobj.thuchien = items.d23 ; myobj.phantram = Utils.getlech(d1: items.d22, d2: items.d23)
+        case 24: myobj.thuchien = items.d24 ; myobj.phantram = Utils.getlech(d1: items.d23, d2: items.d24)
+        case 25: myobj.thuchien = items.d25 ; myobj.phantram = Utils.getlech(d1: items.d24, d2: items.d25)
+        case 26: myobj.thuchien = items.d26 ; myobj.phantram = Utils.getlech(d1: items.d25, d2: items.d26)
+        case 27: myobj.thuchien = items.d27 ; myobj.phantram = Utils.getlech(d1: items.d26, d2: items.d27)
+        case 28: myobj.thuchien = items.d28 ; myobj.phantram = Utils.getlech(d1: items.d27, d2: items.d28)
+        case 29: myobj.thuchien = items.d29 ; myobj.phantram = Utils.getlech(d1: items.d28, d2: items.d29)
+        case 30: myobj.thuchien = items.d30 ; myobj.phantram = Utils.getlech(d1: items.d29, d2: items.d30)
+        case 31: myobj.thuchien = items.d31 ; myobj.phantram = Utils.getlech(d1: items.d30, d2: items.d31)
+            
+        default:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+            
+        }
+        
+        return myobj
+    }
+    static func   getbyloai_ptm( items: BcpttbInfo, loai:Int) -> MyObj {
+        var myobj = MyObj ()
+        switch loai {
+            
+        case 40:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+        case 41:
+            myobj.thuchien = items.thucHienQuy
+            myobj.kehoach = items.keHoachQuy
+            myobj.phantram = items.phanTramThucHienQuy
+        case 42:
+            myobj.thuchien = items.thucHienNam
+            myobj.kehoach = items.keHoachNam
+            myobj.phantram = items.phanTramThucHienNam
+            
+        case 1: myobj.thuchien = items.d1 ; myobj.phantram = Utils.getlech(d1: "0", d2: "0")
+        case 2: myobj.thuchien = items.d2 ; myobj.phantram = Utils.getlech(d1: items.d1, d2: items.d2)
+        case 3: myobj.thuchien = items.d3 ; myobj.phantram = Utils.getlech(d1: items.d2, d2: items.d3)
+        case 4: myobj.thuchien = items.d4 ; myobj.phantram = Utils.getlech(d1: items.d3, d2: items.d4)
+        case 5: myobj.thuchien = items.d5 ; myobj.phantram = Utils.getlech(d1: items.d4, d2: items.d5)
+        case 6: myobj.thuchien = items.d6 ; myobj.phantram = Utils.getlech(d1: items.d5, d2: items.d6)
+        case 7: myobj.thuchien = items.d7 ; myobj.phantram = Utils.getlech(d1: items.d6, d2: items.d7)
+        case 8: myobj.thuchien = items.d8 ; myobj.phantram = Utils.getlech(d1: items.d7, d2: items.d8)
+        case 9: myobj.thuchien = items.d9 ; myobj.phantram = Utils.getlech(d1: items.d8, d2: items.d9)
+        case 10: myobj.thuchien = items.d10 ; myobj.phantram = Utils.getlech(d1: items.d9, d2: items.d10)
+        case 11: myobj.thuchien = items.d11 ; myobj.phantram = Utils.getlech(d1: items.d10, d2: items.d11)
+        case 12: myobj.thuchien = items.d12 ; myobj.phantram = Utils.getlech(d1: items.d11, d2: items.d12)
+        case 13: myobj.thuchien = items.d13 ; myobj.phantram = Utils.getlech(d1: items.d12, d2: items.d13)
+        case 14: myobj.thuchien = items.d14 ; myobj.phantram = Utils.getlech(d1: items.d13, d2: items.d14)
+        case 15: myobj.thuchien = items.d15 ; myobj.phantram = Utils.getlech(d1: items.d14, d2: items.d15)
+        case 16: myobj.thuchien = items.d16 ; myobj.phantram = Utils.getlech(d1: items.d15, d2: items.d16)
+        case 17: myobj.thuchien = items.d17 ; myobj.phantram = Utils.getlech(d1: items.d16, d2: items.d17)
+        case 18: myobj.thuchien = items.d18 ; myobj.phantram = Utils.getlech(d1: items.d17, d2: items.d18)
+        case 19: myobj.thuchien = items.d19 ; myobj.phantram = Utils.getlech(d1: items.d18, d2: items.d19)
+        case 20: myobj.thuchien = items.d20 ; myobj.phantram = Utils.getlech(d1: items.d19, d2: items.d20)
+        case 21: myobj.thuchien = items.d21 ; myobj.phantram = Utils.getlech(d1: items.d20, d2: items.d21)
+        case 22: myobj.thuchien = items.d22 ; myobj.phantram = Utils.getlech(d1: items.d21, d2: items.d22)
+        case 23: myobj.thuchien = items.d23 ; myobj.phantram = Utils.getlech(d1: items.d22, d2: items.d23)
+        case 24: myobj.thuchien = items.d24 ; myobj.phantram = Utils.getlech(d1: items.d23, d2: items.d24)
+        case 25: myobj.thuchien = items.d25 ; myobj.phantram = Utils.getlech(d1: items.d24, d2: items.d25)
+        case 26: myobj.thuchien = items.d26 ; myobj.phantram = Utils.getlech(d1: items.d25, d2: items.d26)
+        case 27: myobj.thuchien = items.d27 ; myobj.phantram = Utils.getlech(d1: items.d26, d2: items.d27)
+        case 28: myobj.thuchien = items.d28 ; myobj.phantram = Utils.getlech(d1: items.d27, d2: items.d28)
+        case 29: myobj.thuchien = items.d29 ; myobj.phantram = Utils.getlech(d1: items.d28, d2: items.d29)
+        case 30: myobj.thuchien = items.d30 ; myobj.phantram = Utils.getlech(d1: items.d29, d2: items.d30)
+        case 31: myobj.thuchien = items.d31 ; myobj.phantram = Utils.getlech(d1: items.d30, d2: items.d31)
+            
+        default:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+            
+        }
+        
+        return myobj
+    }
+    
+    static func   getbyloai_ll( items: BcluuluongInfo, loai:Int) -> MyObj {
+        var myobj = MyObj ()
+        switch loai {
+            
+        case 40:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
+        case 41:
+            myobj.thuchien = items.thucHienQuy
+            myobj.kehoach = items.keHoachQuy
+            myobj.phantram = items.phanTramThucHienQuy
+        case 42:
+            myobj.thuchien = items.thucHienNam
+            myobj.kehoach = items.keHoachNam
+            myobj.phantram = items.phanTramThucHienNam
+            
+        case 1: myobj.thuchien = items.d1 ; myobj.phantram = Utils.getlech(d1: "0", d2: "0")
+        case 2: myobj.thuchien = items.d2 ; myobj.phantram = Utils.getlech(d1: items.d1, d2: items.d2)
+        case 3: myobj.thuchien = items.d3 ; myobj.phantram = Utils.getlech(d1: items.d2, d2: items.d3)
+        case 4: myobj.thuchien = items.d4 ; myobj.phantram = Utils.getlech(d1: items.d3, d2: items.d4)
+        case 5: myobj.thuchien = items.d5 ; myobj.phantram = Utils.getlech(d1: items.d4, d2: items.d5)
+        case 6: myobj.thuchien = items.d6 ; myobj.phantram = Utils.getlech(d1: items.d5, d2: items.d6)
+        case 7: myobj.thuchien = items.d7 ; myobj.phantram = Utils.getlech(d1: items.d6, d2: items.d7)
+        case 8: myobj.thuchien = items.d8 ; myobj.phantram = Utils.getlech(d1: items.d7, d2: items.d8)
+        case 9: myobj.thuchien = items.d9 ; myobj.phantram = Utils.getlech(d1: items.d8, d2: items.d9)
+        case 10: myobj.thuchien = items.d10 ; myobj.phantram = Utils.getlech(d1: items.d9, d2: items.d10)
+        case 11: myobj.thuchien = items.d11 ; myobj.phantram = Utils.getlech(d1: items.d10, d2: items.d11)
+        case 12: myobj.thuchien = items.d12 ; myobj.phantram = Utils.getlech(d1: items.d11, d2: items.d12)
+        case 13: myobj.thuchien = items.d13 ; myobj.phantram = Utils.getlech(d1: items.d12, d2: items.d13)
+        case 14: myobj.thuchien = items.d14 ; myobj.phantram = Utils.getlech(d1: items.d13, d2: items.d14)
+        case 15: myobj.thuchien = items.d15 ; myobj.phantram = Utils.getlech(d1: items.d14, d2: items.d15)
+        case 16: myobj.thuchien = items.d16 ; myobj.phantram = Utils.getlech(d1: items.d15, d2: items.d16)
+        case 17: myobj.thuchien = items.d17 ; myobj.phantram = Utils.getlech(d1: items.d16, d2: items.d17)
+        case 18: myobj.thuchien = items.d18 ; myobj.phantram = Utils.getlech(d1: items.d17, d2: items.d18)
+        case 19: myobj.thuchien = items.d19 ; myobj.phantram = Utils.getlech(d1: items.d18, d2: items.d19)
+        case 20: myobj.thuchien = items.d20 ; myobj.phantram = Utils.getlech(d1: items.d19, d2: items.d20)
+        case 21: myobj.thuchien = items.d21 ; myobj.phantram = Utils.getlech(d1: items.d20, d2: items.d21)
+        case 22: myobj.thuchien = items.d22 ; myobj.phantram = Utils.getlech(d1: items.d21, d2: items.d22)
+        case 23: myobj.thuchien = items.d23 ; myobj.phantram = Utils.getlech(d1: items.d22, d2: items.d23)
+        case 24: myobj.thuchien = items.d24 ; myobj.phantram = Utils.getlech(d1: items.d23, d2: items.d24)
+        case 25: myobj.thuchien = items.d25 ; myobj.phantram = Utils.getlech(d1: items.d24, d2: items.d25)
+        case 26: myobj.thuchien = items.d26 ; myobj.phantram = Utils.getlech(d1: items.d25, d2: items.d26)
+        case 27: myobj.thuchien = items.d27 ; myobj.phantram = Utils.getlech(d1: items.d26, d2: items.d27)
+        case 28: myobj.thuchien = items.d28 ; myobj.phantram = Utils.getlech(d1: items.d27, d2: items.d28)
+        case 29: myobj.thuchien = items.d29 ; myobj.phantram = Utils.getlech(d1: items.d28, d2: items.d29)
+        case 30: myobj.thuchien = items.d30 ; myobj.phantram = Utils.getlech(d1: items.d29, d2: items.d30)
+        case 31: myobj.thuchien = items.d31 ; myobj.phantram = Utils.getlech(d1: items.d30, d2: items.d31)
+            
+        default:
+            myobj.thuchien = items.thucHienThang
+            myobj.kehoach = items.keHoachThang
+            myobj.phantram = items.phanTramThucHienThang
             
         }
         

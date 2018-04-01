@@ -4,12 +4,12 @@
 
 import Foundation
 
-struct BcthObj: Codable {
+struct DtttObj: Codable {
     let success: Bool
-    let bcthInfo: [BcthInfo]
+    let bcthInfo: [DtttInfo]
 }
 
-struct BcthInfo: Codable {
+struct DtttInfo: Codable {
     let nam, thang, mucquyen, istrungtam: Int
     let quy, thangTruoc, namTruoc: Int
     let tenNhom: String
@@ -31,7 +31,14 @@ struct BcthInfo: Codable {
     let ngaytao: String
     let chitieu: String
     
-  
+    let d1, d2, d3: String
+    let d4, d5, d6, d7: String
+    let d8, d9, d10, d11: String
+    let d12, d13, d14, d15: String
+    let d16, d17, d18, d19: String
+    let d20, d21, d22, d23: String
+    let d24, d25, d26, d27: String
+    let d28, d29, d30, d31: String
     
     enum CodingKeys: String, CodingKey {
         case nam, thang, mucquyen, istrungtam, quy
@@ -72,36 +79,21 @@ struct BcthInfo: Codable {
         case tbLktTruocCungky = "tb_lkt_truoc_cungky"
         case ssTBLktTruocCungky = "ss_tb_lkt_truoc_cungky"
         case ngaytao, chitieu
+        
+         case d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31
     }
 }
 
-enum Dvt: String, Codable {
-    case erl = "Erl"
-    case mbNgày = "Mb/ngày"
-    case thuêBao = "Thuê bao"
-    case triệuĐồng = "Triệu đồng"
-}
-enum Ngaytao: String, Codable {
-    case the040024032018 = "04:00 24/03/2018"
-    case the070424032018 = "07:04 24/03/2018"
-    case the072124032018 = "07:21 24/03/2018"
-    case the072224032018 = "07:22 24/03/2018"
-}
 
-enum SoLieuTongHopLuc: String, Codable {
-    case empty = ""
-}
 
-enum UocTinh: String, Codable {
-    case the0 = "0"
-}
+
 
 
 // MARK: Convenience initializers
 
-extension BcthObj {
+extension DtttObj {
     init(data: Data) throws {
-        self = try JSONDecoder().decode(BcthObj.self, from: data)
+        self = try JSONDecoder().decode(DtttObj.self, from: data)
     }
     
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -124,9 +116,9 @@ extension BcthObj {
     }
 }
 
-extension BcthInfo {
+extension DtttInfo {
     init(data: Data) throws {
-        self = try JSONDecoder().decode(BcthInfo.self, from: data)
+        self = try JSONDecoder().decode(DtttInfo.self, from: data)
     }
     
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {

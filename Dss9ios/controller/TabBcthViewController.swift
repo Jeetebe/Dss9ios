@@ -17,6 +17,9 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
     }
     
 
+    @IBAction func chon_loai(_ sender: Any) {
+          dropDownDoituong.show()
+    }
     
     @IBOutlet weak var mytableBcth: UITableView!
     
@@ -111,8 +114,10 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
             cell = Bundle.main.loadNibNamed("cellbcth", owner: self, options: nil)?[0] as! CellBcth;
         }
         
-        cell.lbmuc.text = list[indexPath.row].donVi
-        cell.lbloai.text = list[indexPath.row].tenNhom
+        let donvi = list[indexPath.row].donVi.replacingOccurrences(of: "D?ch V?", with: "Dịch Vụ").replacingOccurrences(of: "Tr? Tru?c", with: "Trả trước").replacingOccurrences(of: "Tr? sau", with: "Trả sau").replacingOccurrences(of: "Luu Lu?ng", with: "Lưu lượng")
+        cell.lbmuc.text = donvi
+        let tennhom = list[indexPath.row].tenNhom.replacingOccurrences(of: "D?ch V?", with: "Dịch Vụ").replacingOccurrences(of: "Tr? Tru?c", with: "Trả trước").replacingOccurrences(of: "Tr? sau", with: "Trả sau").replacingOccurrences(of: "Luu Lu?ng", with: "Lưu lượng")
+        cell.lbloai.text = tennhom
         
         var bcth = list[indexPath.row]
         var myobj = Utils.getbyloai(items: bcth, loai: chon)
@@ -142,12 +147,16 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
     
     func getdata ()
     {
-        guard  let url_bcth = URL(string: "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=108&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=3") else {
-            return
+        let url_bcth = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=108&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=3"
+         
+        print("url:\(url_bcth)")
+        guard  let urllink = URL(string: url_bcth)
+            else {
+                return
         }
         
         
-        let task = URLSession.shared.dataTask(with: url_bcth) { (data, _, _) in
+        let task = URLSession.shared.dataTask(with: urllink) { (data, _, _) in
             guard let data = data else { return }
             print(data)
             do {
@@ -157,7 +166,7 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
                     print("size: \(self.list.count)")
                     self.list = bcth.bcthInfo
                     self.mytableBcth.reloadData()
-                    
+
                     self.listloai.removeAll()
                     self.listloai.append("Tháng " + String(bcth.bcthInfo[0].thang))
                     self.listloai.append("Quí " + String(bcth.bcthInfo[0].quy))

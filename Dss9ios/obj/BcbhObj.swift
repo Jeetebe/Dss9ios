@@ -4,34 +4,36 @@
 
 import Foundation
 
-struct BcthObj: Codable {
+struct BcbhObj: Codable {
     let success: Bool
-    let bcthInfo: [BcthInfo]
+    let bcbhInfo: [BcbhInfo]
 }
 
-struct BcthInfo: Codable {
+struct BcbhInfo: Codable {
     let nam, thang, mucquyen, istrungtam: Int
     let quy, thangTruoc, namTruoc: Int
-    let tenNhom: String
-    let loaibc, isSum: Int
-    let uocTinhCkn, uocTinhGiamTru: String
+    let tenNhom, loaibc: String
+    let isSum: Int
     let soLieuTongHopLuc: String
     let stt: Int
-    let donVi: String
-    let dvt: String
-    let groupName, keHoachThang, thucHienThang, phanTramThucHienThang: String
-    let keHoachQuy, thucHienQuy, phanTramThucHienQuy, keHoachNam: String
-    let thucHienNam, phanTramThucHienNam: String
-    let ssBqThangHienTai: String
-    let ssBqThangTruoc, ssBqTocDoTangThangHienTai, ssBqThangNamHienTai, ssBqThangNamTruoc: String
-    let ssBqTocDoTangThangNamTruoc, ssBqLuykeNamHienTai, ssBqLuykeNamTruoc, ssBqLuykeTocDoTangTruong: String
-    let ssBqNamHienTai, ssBqNamTruoc, ssBqTocDoTangTruong, idx: String
+    let donVi, dvt, groupName, keHoachThang: String
+    let thucHienThang, phanTramThucHienThang, keHoachQuy, thucHienQuy: String
+    let phanTramThucHienQuy, keHoachNam, thucHienNam, phanTramThucHienNam: String
+    let ssBqThangHienTai, ssBqThangTruoc, ssBqTocDoTangThangHienTai, ssBqThangNamHienTai: String
+    let ssBqThangNamTruoc, ssBqTocDoTangThangNamTruoc, ssBqLuykeNamHienTai, ssBqLuykeNamTruoc: String
+    let ssBqLuykeTocDoTangTruong, ssBqNamHienTai, ssBqNamTruoc, ssBqTocDoTangTruong: String
+    let idx: String
     let ngaylk: Int
-    let tbLktTruocCungky, ssTBLktTruocCungky: String
-    let ngaytao: String
-    let chitieu: String
-    
-  
+    let ngaytao, chitieu, thThangVebieudo, tenvebieudo: String
+    let strThang, maxdata, d1, d2: String
+    let d3, d4, d5, d6: String
+    let d7, d8, d9, d10: String
+    let d11, d12, d13, d14: String
+    let d15, d16, d17, d18: String
+    let d19, d20, d21, d22: String
+    let d23, d24, d25, d26: String
+    let d27, d28, d29, d30: String
+    let d31, tbLktTruocCungky, ssTBLktTruocCungky: String
     
     enum CodingKeys: String, CodingKey {
         case nam, thang, mucquyen, istrungtam, quy
@@ -40,8 +42,6 @@ struct BcthInfo: Codable {
         case tenNhom = "ten_nhom"
         case loaibc
         case isSum = "is_sum"
-        case uocTinhCkn = "uoc_tinh_ckn"
-        case uocTinhGiamTru = "uoc_tinh_giam_tru"
         case soLieuTongHopLuc = "so_lieu_tong_hop_luc"
         case stt
         case donVi = "don_vi"
@@ -68,40 +68,21 @@ struct BcthInfo: Codable {
         case ssBqNamHienTai = "ss_bq_nam_hien_tai"
         case ssBqNamTruoc = "ss_bq_nam_truoc"
         case ssBqTocDoTangTruong = "ss_bq_toc_do_tang_truong"
-        case idx, ngaylk
+        case idx, ngaylk, ngaytao, chitieu
+        case thThangVebieudo = "th_thang_vebieudo"
+        case tenvebieudo
+        case strThang = "str_thang"
+        case maxdata, d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15, d16, d17, d18, d19, d20, d21, d22, d23, d24, d25, d26, d27, d28, d29, d30, d31
         case tbLktTruocCungky = "tb_lkt_truoc_cungky"
         case ssTBLktTruocCungky = "ss_tb_lkt_truoc_cungky"
-        case ngaytao, chitieu
     }
 }
 
-enum Dvt: String, Codable {
-    case erl = "Erl"
-    case mbNgày = "Mb/ngày"
-    case thuêBao = "Thuê bao"
-    case triệuĐồng = "Triệu đồng"
-}
-enum Ngaytao: String, Codable {
-    case the040024032018 = "04:00 24/03/2018"
-    case the070424032018 = "07:04 24/03/2018"
-    case the072124032018 = "07:21 24/03/2018"
-    case the072224032018 = "07:22 24/03/2018"
-}
-
-enum SoLieuTongHopLuc: String, Codable {
-    case empty = ""
-}
-
-enum UocTinh: String, Codable {
-    case the0 = "0"
-}
-
-
 // MARK: Convenience initializers
 
-extension BcthObj {
+extension BcbhObj {
     init(data: Data) throws {
-        self = try JSONDecoder().decode(BcthObj.self, from: data)
+        self = try JSONDecoder().decode(BcbhObj.self, from: data)
     }
     
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -124,9 +105,9 @@ extension BcthObj {
     }
 }
 
-extension BcthInfo {
+extension BcbhInfo {
     init(data: Data) throws {
-        self = try JSONDecoder().decode(BcthInfo.self, from: data)
+        self = try JSONDecoder().decode(BcbhInfo.self, from: data)
     }
     
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {

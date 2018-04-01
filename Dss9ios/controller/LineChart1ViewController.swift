@@ -121,6 +121,7 @@ class LineChart1ViewController: DemoBaseViewController {
         //set1.drawFilledEnabled = true
         
         let data = LineChartData(dataSet: set1)
+        chartView.chartDescription?.font = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
         
         chartView.data = data
     }

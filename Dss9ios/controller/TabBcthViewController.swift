@@ -143,7 +143,20 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
         return cell as CellBcth
     }
 
-
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+           if ident == "showtaikhoan"
+            {
+                print("showtaikhoan")
+                var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : TaikhoanViewController = storyboard.instantiateViewController(withIdentifier: "TaikhoanViewController") as! TaikhoanViewController
+                //vc.myFilter = self.myFilter
+                
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        return true
+    }
     
     func getdata ()
     {

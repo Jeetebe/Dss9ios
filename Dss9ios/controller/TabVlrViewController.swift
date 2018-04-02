@@ -12,13 +12,31 @@ import McPicker
 import  DropDown
 import JTAppleCalendar
 
-class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataSource, CalendarPopUpDelegate{
+class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataSource, CalendarPopUpDelegate, Protocol{
     func dateChaged(date: Date) {
         
     }
-
-    var listloai = ["Tháng","Quí","Năm"]
+    func passingDataBack(withString: String) {
+        //
+        print("back \(withString)")
+    }
     
+    func passingFilterBack(filter: FilterObj) {
+        //
+        print("back filter\(filter.nam)")
+        self.myFilter = filter
+        self.getdata()
+        DispatchQueue.main.async {
+            self.mytableVlr.reloadData()
+        }
+    }
+
+    let dropDownDoituong = DropDown()
+    var listloai = ["Tháng","Quí","Năm"]
+    var testCalendar = Calendar(identifier: .gregorian)
+    var myFilter:FilterObj!
+    
+    var mydate: MyDateObj!
   
     @IBOutlet weak var mytableVlr: UITableView!
     @IBOutlet weak var btndoituong: UIButton!
@@ -46,7 +64,20 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
     
     let data: [[String]] = [["Năm 2018", "Năm 2017", "Năm 2016"]]
     
-    
+    func setDate() {
+        let month = testCalendar.dateComponents([.month], from: currentDate).month!
+        let weekday = testCalendar.component(.weekday, from: currentDate)
+        let monthName = DateFormatter().monthSymbols[(month-1) % 12] //GetHumanDate(month: month)//
+        let week = DateFormatter().shortWeekdaySymbols[weekday-1]
+        
+        let day = testCalendar.component(.day, from: currentDate)
+        let year = testCalendar.component(.year, from: currentDate)
+        
+        
+        
+        mydate = MyDateObj (nam: String(year),thang: String(month-1),ngay: String(day))
+        //dateLabel.text = "\(week), " + monthName + " " + String(day)
+    }
     @IBAction func show_search(_ sender: Any) {
         let dialog = AZDialogViewController(title: "Tìm kiém thông tin", message: "minitour")
         
@@ -71,6 +102,8 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
         mytableVlr.rowHeight = 80
         mytableVlr.estimatedRowHeight = 140
         
+        setDate()
+        myFilter = FilterObj(nam: mydate.nam, thang: mydate.thang, tinh: "-1",tentinh: "Công ty", loai: "-1", ngay: "40", tab: -1)
          setupdoituong()
          getdata ()
     }
@@ -119,7 +152,7 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
         cell.lbmuc.text = list[indexPath.row].donVi
         
         var bcth = list[indexPath.row]
-        var myobj = Utils.getbyloai(items: bcth, loai: chon)
+        var myobj = Utils.getbyloai_vlr(items: bcth, loai: chon)
         
         cell.lbthuchien.text = myobj.thuchien
         cell.lbkehoach.text = myobj.kehoach
@@ -156,12 +189,20 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
     func getdata ()
     {
         
-        guard  let url_vlr = URL(string: "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=VLR") else {
-            return
+        if myFilter.loai == "-1"
+        {
+            myFilter.loai = "VLR"
+        }
+        let url_vlr = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
+        print("url vlr\(url_vlr)")
+        guard  let url = URL(string: url_vlr)
+            
+            else {
+                return
         }
         
         
-        let task = URLSession.shared.dataTask(with: url_vlr) { (data, _, _) in
+        let task = URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }
             print(data)
             do {
@@ -179,5 +220,34 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
         task.resume()
         
     }
+    override func shouldPerformSegue(withIdentifier identifier: String?, sender: Any?) -> Bool {
+        if let ident = identifier {
+            if ident == "chontinh" {
+                if let indexPath = self.mytableVlr.indexPathForSelectedRow {
+                    print("row \(indexPath.row)")
+                    var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    var vc : LineChart1ViewController = storyboard.instantiateViewController(withIdentifier: "LineChart1ViewController") as! LineChart1ViewController
+                    vc.row=indexPath.row;
+                    vc.ten = self.list[indexPath.row].donVi
+                    vc.myFilter = self.myFilter
+                    
+                    self.present(vc, animated: true, completion: nil)
+                    
+                }
+                
+            }
+            else if ident == "showpie"
+            {
+                print("show pie")
+                var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : PieChartViewController = storyboard.instantiateViewController(withIdentifier: "PieChartViewController") as! PieChartViewController
+                vc.myFilter = self.myFilter
+                
+                self.present(vc, animated: true, completion: nil)
+            }
+        }
+        return true
+    }
+
 
 }

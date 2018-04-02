@@ -277,6 +277,16 @@ class TabDtbhViewController: UIViewController , UITabBarDelegate,UITableViewData
                 
                 self.present(vc, animated: true, completion: nil)
             }
+            
+            else if ident == "showtaikhoan"
+            {
+                print("showtaikhoan")
+                var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                var vc : TaikhoanViewController = storyboard.instantiateViewController(withIdentifier: "TaikhoanViewController") as! TaikhoanViewController
+                   //vc.myFilter = self.myFilter
+                
+                self.present(vc, animated: true, completion: nil)
+            }
         }
         return true
     }

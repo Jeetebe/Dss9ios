@@ -91,7 +91,6 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
     @IBAction func show_search(_ sender: Any) {
         let dialog = AZDialogViewController(title: "Tìm kiém thông tin", message: "minitour")
         
-        
         dialog.addAction(AZDialogAction(title: "Edit Name") { (dialog) -> (Void) in
             //add your actions here.
             McPicker.showAsPopover(data:self.data, fromViewController: self, sourceView: sender as! UIView, doneHandler: { [weak self] (selections: [Int : String]) -> Void in

@@ -14,5 +14,8 @@ pod 'Charts'
 pod "McPicker"
 
 pod 'AZDialogView'
-
+pod 'Alamofire'
+   pod 'SmileLock'
+   
+   
 end

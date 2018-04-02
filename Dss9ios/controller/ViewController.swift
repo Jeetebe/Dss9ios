@@ -13,6 +13,8 @@ import TabPageViewController
 class ViewController: UIViewController {
     
     
+    var userinfo: UserInfo!
+    
     let bg = #colorLiteral(red: 0.2447162889, green: 0.3756026192, blue: 0.6181792422, alpha: 1)
     override func viewDidLoad() {
         super.viewDidLoad()

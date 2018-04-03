@@ -32,6 +32,8 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
     var list=[BcthInfo]()
     var listloai = ["Tháng","Quí","Năm"]
     var chon = 40
+    var myFilter:FilterObj!
+    var mydate: MyDateObj!
     
     var currentDate: Date! = Date() {
         didSet {
@@ -56,7 +58,9 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
         mytableBcth.rowHeight = 130
         mytableBcth.estimatedRowHeight = 140
         
-        //setupdoituong()
+         setDate()
+         myFilter = FilterObj(nam: mydate.nam, thang: mydate.thang, tinh: "-1",tentinh: "Công ty", loai: "-1", ngay: "40", tab: -1)
+       
         getdata ()
         
         currentDate = Date()
@@ -65,11 +69,12 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
     func setDate() {
         let month = testCalendar.dateComponents([.month], from: currentDate).month!
         let weekday = testCalendar.component(.weekday, from: currentDate)
-        let monthName = DateFormatter().monthSymbols[(month-1) % 12] //GetHumanDate(month: month)//
+        let monthName = DateFormatter().monthSymbols[(month) % 12] //GetHumanDate(month: month)//
         let week = DateFormatter().shortWeekdaySymbols[weekday-1]
-        
         let day = testCalendar.component(.day, from: currentDate)
+        let year = testCalendar.component(.year, from: currentDate)
         
+         mydate = MyDateObj (nam: String(year),thang: String(month),ngay: String(day))
         //dateLabel.text = "\(week), " + monthName + " " + String(day)
     }
     
@@ -160,7 +165,11 @@ class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataS
     
     func getdata ()
     {
-        let url_bcth = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=108&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang=03&nam=2018&idtinh=-1&loai=3"
+        if myFilter.loai == "-1"
+        {
+            myFilter.loai = "3"
+        }
+        let url_bcth = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=108&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+self.myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai="+myFilter.loai
          
         print("url:\(url_bcth)")
         guard  let urllink = URL(string: url_bcth)

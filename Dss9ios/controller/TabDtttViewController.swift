@@ -83,7 +83,7 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
         
       
         
-        mydate = MyDateObj (nam: String(year),thang: String(month-1),ngay: String(day))
+        mydate = MyDateObj (nam: String(year),thang: String(month),ngay: String(day))
         //dateLabel.text = "\(week), " + monthName + " " + String(day)
     }
     
@@ -214,6 +214,7 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
         if segue.identifier == "gofilter"
         {
             let vc = segue.destination as? SearchViewController
+            vc?.tab = 2
             vc?.proto = self //This line will instantiate the protocol to our ViewController class
         }
     }
@@ -222,7 +223,7 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
     {
         if myFilter.loai == "-1"
         {
-            myFilter.loai = "VLR"
+            myFilter.loai = "1"
         }
         let url_dttt = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=109&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
         print("url vlr\(url_dttt)")
@@ -242,6 +243,12 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
                 DispatchQueue.main.async {
                     self.list = bcth.bcthInfo
                     self.mytableVlr.reloadData()
+                    
+                    self.listloai.removeAll()
+                    self.listloai.append("Tháng " + String(bcth.bcthInfo[0].thang))
+                    self.listloai.append("Quí " + String(bcth.bcthInfo[0].quy))
+                    self.listloai.append("Năm " + String(bcth.bcthInfo[0].nam))
+                    self.setupdoituong()
                 }
             } catch {
                 print("error getdata")
@@ -273,6 +280,7 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
                 var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 var vc : PieChartViewController = storyboard.instantiateViewController(withIdentifier: "PieChartViewController") as! PieChartViewController
                 vc.myFilter = self.myFilter
+                vc.tab = 2
                 
                 self.present(vc, animated: true, completion: nil)
             }

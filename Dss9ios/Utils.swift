@@ -376,6 +376,27 @@ class Utils {
         }
         return listmysimple
     }
+    static func   listDTTT2simple( listsource: [DtttInfo]) -> [SimpleObj] {
+        var listmysimple = [SimpleObj] ()
+        for obj in listsource
+        {
+            var i=0
+            do {
+                try i = Int(obj.thucHienThang.replacingOccurrences(of: ",", with: ""))!
+            }
+            catch{
+                i = 0
+            }
+            //let i = 10
+            if !obj.donVi.contains("Công ty")
+            {
+                listmysimple.append(SimpleObj(t: obj.donVi,gt: obj.thucHienThang,gti: i))
+            }
+            
+        }
+        return listmysimple
+    }
+    
     static func   Myobj2Simple4Linechart( listsource: [MyObj], position:Int) -> [SimpleObj] {
         var listmysimple = [SimpleObj] ()
         

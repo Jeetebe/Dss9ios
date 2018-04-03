@@ -215,8 +215,6 @@ class TabDtbhViewController: UIViewController , UITabBarDelegate,UITableViewData
     
     func getdata ()
     {
-        
-      
             
             if myFilter.loai == "-1"
             {
@@ -243,6 +241,11 @@ class TabDtbhViewController: UIViewController , UITabBarDelegate,UITableViewData
                 self.list = vlr.bcbhInfo
                 DispatchQueue.main.async {
                     self.mytableVlr.reloadData()
+                    self.listloai.removeAll()
+                    self.listloai.append("Tháng " + String(vlr.bcbhInfo[0].thang))
+                    self.listloai.append("Quí " + String(vlr.bcbhInfo[0].quy))
+                    self.listloai.append("Năm " + String(vlr.bcbhInfo[0].nam))
+                    self.setupdoituong()
                 }
             } catch {
                 print("error getdata")

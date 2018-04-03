@@ -15,6 +15,7 @@ class PieChartViewController: DemoBaseViewController {
 
     var list = [SimpleObj]()
     var myFilter = FilterObj()
+    var tab:Int!
     
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -106,7 +107,56 @@ class PieChartViewController: DemoBaseViewController {
     
     func getdata ()
     {
-        let url = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
+        var cmd = ""
+        switch tab {
+        case 1:
+            cmd = "111"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "VLR"
+            }
+        case 2:
+            cmd = "109"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "1"
+            }
+        case 3:
+            cmd = "110"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "Tong_Hop"
+            }
+        case 4:
+            cmd = "112"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "PTTB_TT"
+            }
+        case 5:
+            cmd = "113"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "LL_Thoai"
+            }
+            
+            
+        default:
+            cmd = "111"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "VLR"
+            }
+        }
+        
+        
+        let url = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd="+cmd+"&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
         print("url vlr\(url)")
         guard  let url_vlr = URL(string: url)
             else {
@@ -118,13 +168,23 @@ class PieChartViewController: DemoBaseViewController {
             guard let data = data else { return }
             print(data)
             do {
-                let bcth = try JSONDecoder().decode(BcvlObj.self, from: data)
-                //et user = User(data)
-                //print(user.userInfo.tendangnhap)
-                DispatchQueue.main.async {
-                  
+                switch self.tab
+                {
+                case 1:
+                    let bcth = try JSONDecoder().decode(BcvlObj.self, from: data)
                     self.list = Utils.listVLR2simple(listsource: bcth.bcvlrInfo)
                     print("size list: \(self.list.count)")
+                case 2:
+                    let bcth = try JSONDecoder().decode(DtttObj.self, from: data)
+                    self.list = Utils.listDTTT2simple(listsource: bcth.bcthInfo)
+                   
+                default:
+                    return
+                }
+                
+                print("size list: \(self.list.count)")
+                DispatchQueue.main.async {
+                   
                     if self.list.count != 12
                     {
                         self.list.removeLast();

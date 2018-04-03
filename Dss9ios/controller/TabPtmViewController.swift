@@ -243,6 +243,11 @@ class TabPtmViewController: UIViewController , UITabBarDelegate,UITableViewDataS
                 self.list = vlr.bcpttbInfo
                 DispatchQueue.main.async {
                     self.mytableVlr.reloadData()
+                    self.listloai.removeAll()
+                    self.listloai.append("Tháng " + String(vlr.bcpttbInfo[0].thang))
+                    self.listloai.append("Quí " + String(vlr.bcpttbInfo[0].quy))
+                    self.listloai.append("Năm " + String(vlr.bcpttbInfo[0].nam))
+                    self.setupdoituong()
                 }
             } catch {
                 print("error getdata")

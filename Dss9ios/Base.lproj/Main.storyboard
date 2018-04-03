@@ -490,7 +490,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jZX-bK-Ktm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2736.8000000000002" y="-574.36281859070471"/>
+            <point key="canvasLocation" x="2058" y="-654"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="aB6-YT-uVq">
@@ -804,7 +804,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B1v-Xo-B0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1352.8" y="-101.19940029985008"/>
+            <point key="canvasLocation" x="1247" y="-709"/>
         </scene>
         <!--Tab Dttt View Controller-->
         <scene sceneID="oBY-hP-Ube">
@@ -914,6 +914,9 @@
                                             <constraint firstAttribute="height" constant="40" id="yLg-rP-DpB"/>
                                         </constraints>
                                         <state key="normal" image="icons8-pie_chart"/>
+                                        <connections>
+                                            <segue destination="UTg-Wn-dZ4" kind="show" identifier="showpie" id="bd5-OT-yoY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ee1-E3-ykr">
                                         <rect key="frame" x="327" y="0.0" width="40" height="40"/>
@@ -924,6 +927,7 @@
                                         <state key="normal" image="icons8-search"/>
                                         <connections>
                                             <action selector="show_search:" destination="LZu-vy-jYs" eventType="touchUpInside" id="KXS-bA-vRW"/>
+                                            <segue destination="fD8-bO-Wsb" kind="show" identifier="gofilter" id="Vga-2s-gZ2"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MaG-hy-j9v">
@@ -1528,4 +1532,8 @@
         <image name="icons8-search" width="32" height="32"/>
         <image name="icons8-tasklist" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vga-2s-gZ2"/>
+        <segue reference="bd5-OT-yoY"/>
+    </inferredMetricsTieBreakers>
 </document>

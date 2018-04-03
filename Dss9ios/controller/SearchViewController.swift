@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
 
     var proto: Protocol!
     var newfilter = FilterObj()
+    var tab: Int!
     
     @IBOutlet weak var btnnam: UIButton!
     
@@ -46,6 +47,14 @@ class SearchViewController: UIViewController {
     
     let tl_vlr = ["Thuê Bao VLR","Thuê Bao 3K3D VLR","Thuê Bao VLR - Bật Máy","Thuê Bao VLR - 3G","Thuê Bao VLR - 4G"]
     let tlk_vlr = ["VLR","VLR_3K3D","VLR_BatMay","VLR_3G","VLR_4G"]
+    
+    let tl_dttt = ["DTTT theo DV",
+                   
+                   "DTTT theo DV (TT)","DTTT theo DV (TS)",
+                   
+                   "DTTT Chi nhánh (TT)","DTTT Chi nhánh (TS)","DTTT Chi nhánh (TT+TS)","DTTT Chi nhánh (KHCN)","DTTT Chi nhánh (KHDN-TS)","DTTT Chi nhánh (KHDN-TT)"]
+    let tlk_dttt = ["1","2","3","4","5","6","7","8","9"]
+    
     
     
     
@@ -96,11 +105,21 @@ class SearchViewController: UIViewController {
         McPicker.showAsPopover(data:dataLoai, fromViewController: self, sourceView: sender as! UIView, doneHandler: { [weak self] (selections: [Int : String]) -> Void in
             if let name = selections[0] {
                 self?.btnloai.setTitle(name, for: .normal)
-                
-                let ind = self?.tl_vlr.index(of: name)
-                let loai = self?.tlk_vlr[ind!]
-                
+                var loai = ""
+                switch tab {
+                case 1:
+                    let ind = self?.tl_vlr.index(of: name)
+                    loai = self?.tlk_vlr[ind!]
+                    
+                case 2:
+                    let ind = self?.tl_dttt.index(of: name)
+                    loai = self?.tlk_dttt[ind!]
+                    
+                default:
+                    return
+                }
                 self?.newfilter.loai = loai!
+               
                 
             }
             }
@@ -110,8 +129,18 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("tab \(tab)")
+        
         getdataTinh ()
-        dataLoai = [tl_vlr]
+        switch tab {
+        case 1:
+             dataLoai = [tl_vlr]
+        case 2:
+            dataLoai = [tl_dttt]
+        default:
+             dataLoai = [tl_vlr]
+        }
+       
         
         // Do any additional setup after loading the view.
     }

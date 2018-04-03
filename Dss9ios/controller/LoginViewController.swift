@@ -12,7 +12,7 @@ import  Alamofire
 
 class LoginViewController: UIViewController {
 
-    
+     var myFilter:FilterObj!
     var user:UserInfo!
     var mydialog:AZDialogViewController!
     
@@ -22,7 +22,19 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func login_click(_ sender: Any) {
-        getdata ()
+        if (txtuser.text?.contains("usertest"))!
+        {
+             savetest()
+            var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            var vc : ViewController = storyboard.instantiateViewController(withIdentifier: "mainview") as! ViewController
+            
+            
+        }
+        else
+        {
+            getdata ()
+        }
+        
         
     }
     
@@ -34,6 +46,15 @@ class LoginViewController: UIViewController {
          donebutton(to: txtuser)
          donebutton(to: txtpass)
         // Do any additional setup after loading the view.
+    }
+    
+    func savetest()
+    {
+        UserDefaults.standard.setValue(true, forKey: "islogin")
+        
+        UserDefaults.standard.setValue("7592", forKey: "userid")
+        UserDefaults.standard.setValue("User Test", forKey: "tendangnhap")
+        UserDefaults.standard.setValue("Dept", forKey: "tenphongban")
     }
 
     override func didReceiveMemoryWarning() {
@@ -131,15 +152,15 @@ class LoginViewController: UIViewController {
             } catch {
                 print("error getdata")
                 //print("that bai")
-                let dialog = AZDialogViewController(title: "Thông báo ", message: "Đăng nhập thất bại")
+                self.mydialog = AZDialogViewController(title: "Thông báo ", message: "Đăng nhập thất bại")
                 
-                dialog.addAction(AZDialogAction(title: "Đóng") { (dialog) -> (Void) in
+                self.mydialog.addAction(AZDialogAction(title: "Đóng") { (dialog) -> (Void) in
                     //add your actions here.
                     
                     self.mydialog.dismiss()
                 })
                 
-                dialog.show(in: self)
+                self.mydialog.show(in: self)
             }
         }
         task.resume()

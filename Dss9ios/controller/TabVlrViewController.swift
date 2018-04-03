@@ -75,7 +75,7 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
         
         
         
-        mydate = MyDateObj (nam: String(year),thang: String(month-1),ngay: String(day))
+        mydate = MyDateObj (nam: String(year),thang: String(month),ngay: String(day))
         //dateLabel.text = "\(week), " + monthName + " " + String(day)
     }
     @IBAction func show_search(_ sender: Any) {
@@ -104,7 +104,7 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
         
         setDate()
         myFilter = FilterObj(nam: mydate.nam, thang: mydate.thang, tinh: "-1",tentinh: "Công ty", loai: "-1", ngay: "40", tab: -1)
-         setupdoituong()
+         //setupdoituong()
          getdata ()
     }
     
@@ -176,13 +176,11 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "DetailSegue"
+        if segue.identifier == "gofilter"
         {
-            //            let detailViewController = ((segue.destination) as! WebviewController)
-            //
-            //            let indexPath = self.myTableview!.indexPathForSelectedRow!
-            //            let tinhobj = list[indexPath.row]
-            //                      detailViewController.tinhobj=tinhobj
+            let vc = segue.destination as? SearchViewController
+            vc?.tab = 1
+            vc?.proto = self //This line will instantiate the protocol to our ViewController class
         }
     }
     
@@ -212,6 +210,12 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
                 DispatchQueue.main.async {
                     self.list = bcth.bcvlrInfo
                     self.mytableVlr.reloadData()
+                    
+                    self.listloai.removeAll()
+                    self.listloai.append("Tháng " + String(bcth.bcvlrInfo[0].thang))
+                    self.listloai.append("Quí " + String(bcth.bcvlrInfo[0].quy))
+                    self.listloai.append("Năm " + String(bcth.bcvlrInfo[0].nam))
+                    self.setupdoituong()
                 }
             } catch {
                 print("error getdata")
@@ -242,6 +246,7 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
                 var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                 var vc : PieChartViewController = storyboard.instantiateViewController(withIdentifier: "PieChartViewController") as! PieChartViewController
                 vc.myFilter = self.myFilter
+                vc.tab = 1
                 
                 self.present(vc, animated: true, completion: nil)
             }

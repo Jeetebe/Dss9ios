@@ -268,7 +268,7 @@ class TabDtttViewController: UIViewController , UITabBarDelegate,UITableViewData
                     vc.row=indexPath.row;
                     vc.ten = self.list[indexPath.row].donVi
                     vc.myFilter = self.myFilter
-                    
+                      vc.tab = 2
                     self.present(vc, animated: true, completion: nil)
                    
                 }

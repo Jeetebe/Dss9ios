@@ -15,6 +15,7 @@ class LineChart1ViewController: DemoBaseViewController {
   
      var list = [SimpleObj]()
     var myFilter = FilterObj()
+     var tab:Int!
     
     var row = 0
     var ten = ""
@@ -29,6 +30,7 @@ class LineChart1ViewController: DemoBaseViewController {
 
         // Do any additional setup after loading the view.
         self.title = "Line Chart 1"
+        print("tinh: \(myFilter.tinh)")
       
         
         chartView.delegate = self
@@ -96,7 +98,7 @@ class LineChart1ViewController: DemoBaseViewController {
             return ChartDataEntry(x: Double(i), y: Double( self.list[i].giatriInt))
         }
         
-        let ghichu = self.ten + ": " + myFilter.loai + " - tháng "  + myFilter.thang + " năm " + myFilter.nam
+        let ghichu = self.ten + ": " + Utils.get_name(tab: tab, name: myFilter.loai) + " - tháng "  + myFilter.thang + " năm " + myFilter.nam
         let set1 = LineChartDataSet(values: values, label: ghichu)
         set1.drawIconsEnabled = false
         
@@ -128,11 +130,61 @@ class LineChart1ViewController: DemoBaseViewController {
     
     func getdata ()
     {
-        let url = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd=111&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
+        
+        var cmd = ""
+        switch tab {
+        case 1:
+            cmd = "111"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "VLR"
+            }
+        case 2:
+            cmd = "109"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "1"
+            }
+        case 3:
+            cmd = "110"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "Tong_Hop"
+            }
+        case 4:
+            cmd = "112"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "PTTB_TT"
+            }
+        case 5:
+            cmd = "113"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "LL_Thoai"
+            }
+            
+            
+        default:
+            cmd = "111"
+            
+            if myFilter.loai == "-1"
+            {
+                myFilter.loai = "VLR"
+            }
+        }
+        
+        
+        let url = "http://www.simmobi.vn:8090/QLCVMobiWebService/wsqlcv?cmd="+cmd+"&userid=7592&ms_phongban=620&mucquyen=4&istrungtam=1&thang="+myFilter.thang+"&nam="+myFilter.nam+"&idtinh="+myFilter.tinh+"&loai=" + myFilter.loai
         print("url vlr\(url)")
         guard  let url_vlr = URL(string: url)
             else {
-            return
+                return
         }
         
         
@@ -140,16 +192,28 @@ class LineChart1ViewController: DemoBaseViewController {
             guard let data = data else { return }
             print(data)
             do {
-                let bcth = try JSONDecoder().decode(BcvlObj.self, from: data)
-                //et user = User(data)
-                //print(user.userInfo.tendangnhap)
-                DispatchQueue.main.async {
-                   
+                switch self.tab
+                {
+                case 1:
+                    let bcth = try JSONDecoder().decode(BcvlObj.self, from: data)
                     let temp = Utils.listVLR2myObj(listsource: bcth.bcvlrInfo)
                     self.list = Utils.Myobj2Simple4Linechart(listsource: temp, position: self.row)
                     
+                case 2:
+                    let bcth = try JSONDecoder().decode(DtttObj.self, from: data)
+                    let temp = Utils.listDTTT2myObj(listsource: bcth.bcthInfo)
+                    self.list = Utils.Myobj2Simple4Linechart(listsource: temp, position: self.row)
                     
-                    print("size list: \(self.list.count)")
+                    
+                default:
+                    return
+                }
+                
+                
+                
+                print("size list: \(self.list.count)")
+                DispatchQueue.main.async {
+                  
                      self.updateChartData()
                 }
             } catch {

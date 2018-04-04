@@ -5,6 +5,37 @@ import Foundation
 
 class Utils {
     
+    
+    
+    static func get_name(tab:Int, name:String) -> String
+    {
+        let tl_vlr = ["Thuê Bao VLR","Thuê Bao 3K3D VLR","Thuê Bao VLR - Bật Máy","Thuê Bao VLR - 3G","Thuê Bao VLR - 4G"]
+        let tlk_vlr = ["VLR","VLR_3K3D","VLR_BatMay","VLR_3G","VLR_4G"]
+        
+        let tl_dttt = ["DTTT theo DV",
+                       
+                       "DTTT theo DV (TT)","DTTT theo DV (TS)",
+                       
+                       "DTTT CN (TT)","DTTT CN (TS)","DTTT CN (TT+TS)","DTTT CN (KHCN)","DTTT CN (KHDN-TS)","DTTT CN (KHDN-TT)"]
+        let tlk_dttt = ["1","2","3","4","5","6","7","8","9"]
+        
+        var loai:String
+        
+        switch tab {
+        case 1:
+            let ind = tlk_vlr.index(of: name)
+            loai = (tl_vlr[ind!])
+            
+        case 2:
+            let ind = tlk_dttt.index(of: name)
+            loai = (tl_dttt[ind!])
+            
+        default:
+            return ""
+        }
+        return loai
+    }
+    
     static func   gettentinh (list: [TinhInfo]) ->[String]
     {
         var listtinh = [String]()
@@ -350,6 +381,14 @@ class Utils {
     static func   listVLR2myObj( listsource: [BcvlrInfo]) -> [MyObj] {
         var listmyobj = [MyObj] ()
        for obj in listsource
+        {
+            listmyobj.append(MyObj(d1: obj.d1, d2: obj.d2, d3: obj.d3, d4: obj.d4, d5: obj.d5, d6: obj.d6, d7: obj.d7, d8: obj.d8, d9: obj.d9, d10: obj.d10, d11: obj.d11, d12: obj.d12, d13: obj.d13, d14: obj.d14, d15: obj.d15, d16: obj.d16, d17: obj.d17, d18: obj.d18, d19: obj.d19, d20: obj.d20, d21: obj.d21, d22: obj.d22, d23: obj.d23, d24: obj.d24, d25: obj.d25, d26: obj.d26, d27: obj.d27, d28: obj.d28, d29: obj.d29, d30: obj.d30, d31: obj.d31,th: obj.thucHienThang,kh: obj.keHoachThang,ptram: obj.phanTramThucHienThang))
+        }
+        return listmyobj
+    }
+    static func   listDTTT2myObj( listsource: [DtttInfo]) -> [MyObj] {
+        var listmyobj = [MyObj] ()
+        for obj in listsource
         {
             listmyobj.append(MyObj(d1: obj.d1, d2: obj.d2, d3: obj.d3, d4: obj.d4, d5: obj.d5, d6: obj.d6, d7: obj.d7, d8: obj.d8, d9: obj.d9, d10: obj.d10, d11: obj.d11, d12: obj.d12, d13: obj.d13, d14: obj.d14, d15: obj.d15, d16: obj.d16, d17: obj.d17, d18: obj.d18, d19: obj.d19, d20: obj.d20, d21: obj.d21, d22: obj.d22, d23: obj.d23, d24: obj.d24, d25: obj.d25, d26: obj.d26, d27: obj.d27, d28: obj.d28, d29: obj.d29, d30: obj.d30, d31: obj.d31,th: obj.thucHienThang,kh: obj.keHoachThang,ptram: obj.phanTramThucHienThang))
         }

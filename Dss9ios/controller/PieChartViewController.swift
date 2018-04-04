@@ -97,9 +97,9 @@ class PieChartViewController: DemoBaseViewController {
         
         //data.setValueFont(.systemFont(ofSize: 11, weight: .light))
         data.setValueTextColor(.white)
-          let ghichu = myFilter.tentinh + ": " + myFilter.loai + " - tháng "  + myFilter.thang + " năm " + myFilter.nam
+          let ghichu = myFilter.tentinh + ": " + Utils.get_name(tab: tab, name: myFilter.loai) + " - tháng "  + myFilter.thang + " năm " + myFilter.nam
         chartView.chartDescription?.text = ghichu
-        chartView.chartDescription?.font = UIFont(name: "HelveticaNeue-Light", size: 16.0)!
+        chartView.chartDescription?.font = UIFont(name: "HelveticaNeue-Light", size: 14.0)!
         chartView.chartDescription?.enabled = true
         chartView.data = data
         chartView.highlightValues(nil)

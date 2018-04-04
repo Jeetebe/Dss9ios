@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
              savetest()
             var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             var vc : ViewController = storyboard.instantiateViewController(withIdentifier: "mainview") as! ViewController
-            
+             self.present(vc, animated: true, completion: nil)
             
         }
         else

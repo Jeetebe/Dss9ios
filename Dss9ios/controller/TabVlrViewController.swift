@@ -14,7 +14,12 @@ import JTAppleCalendar
 
 class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataSource, CalendarPopUpDelegate, Protocol{
     func dateChaged(date: Date) {
+        chon = testCalendar.component(.day, from: date)
         
+        print("chon \(chon)")
+        DispatchQueue.main.async {
+            self.mytableVlr.reloadData()
+        }
     }
     func passingDataBack(withString: String) {
         //
@@ -232,8 +237,11 @@ class TabVlrViewController: UIViewController , UITabBarDelegate,UITableViewDataS
                     var storyboard : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
                     var vc : LineChart1ViewController = storyboard.instantiateViewController(withIdentifier: "LineChart1ViewController") as! LineChart1ViewController
                     vc.row=indexPath.row;
-                    vc.ten = self.list[indexPath.row].donVi
+                    let ten = self.list[indexPath.row].donVi
+                    //self.myFilter.tinh = ten
+                    vc.ten = ten
                     vc.myFilter = self.myFilter
+                    vc.tab = 1
                     
                     self.present(vc, animated: true, completion: nil)
                     

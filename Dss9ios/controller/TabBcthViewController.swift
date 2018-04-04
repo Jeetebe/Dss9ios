@@ -13,7 +13,12 @@ import JTAppleCalendar
 
 class TabBcthViewController: UIViewController, UITabBarDelegate,UITableViewDataSource , CalendarPopUpDelegate{
     func dateChaged(date: Date) {
+        chon = testCalendar.component(.day, from: date)
         
+        print("chon \(chon)")
+        DispatchQueue.main.async {
+            self.mytableBcth.reloadData()
+        }
     }
     
 

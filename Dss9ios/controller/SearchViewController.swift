@@ -52,7 +52,7 @@ class SearchViewController: UIViewController {
                    
                    "DTTT theo DV (TT)","DTTT theo DV (TS)",
                    
-                   "DTTT Chi nhánh (TT)","DTTT Chi nhánh (TS)","DTTT Chi nhánh (TT+TS)","DTTT Chi nhánh (KHCN)","DTTT Chi nhánh (KHDN-TS)","DTTT Chi nhánh (KHDN-TT)"]
+                   "DTTT CN (TT)","DTTT CN (TS)","DTTT CN (TT+TS)","DTTT CN (KHCN)","DTTT CN (KHDN-TS)","DTTT CN (KHDN-TT)"]
     let tlk_dttt = ["1","2","3","4","5","6","7","8","9"]
     
     
@@ -106,19 +106,19 @@ class SearchViewController: UIViewController {
             if let name = selections[0] {
                 self?.btnloai.setTitle(name, for: .normal)
                 var loai = ""
-                switch tab {
-                case 1:
+                switch self?.tab {
+                case 1?:
                     let ind = self?.tl_vlr.index(of: name)
-                    loai = self?.tlk_vlr[ind!]
+                    loai = (self?.tlk_vlr[ind!])!
                     
-                case 2:
+                case 2?:
                     let ind = self?.tl_dttt.index(of: name)
-                    loai = self?.tlk_dttt[ind!]
+                    loai = (self?.tlk_dttt[ind!])!
                     
                 default:
                     return
                 }
-                self?.newfilter.loai = loai!
+                self?.newfilter.loai = loai
                
                 
             }

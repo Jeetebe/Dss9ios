@@ -27,14 +27,17 @@ class ViewController: UIViewController {
        
         let vc3 = storyboard?.instantiateViewController(withIdentifier: "tabdttt") as! TabDtttViewController
        
-        let vc4 = storyboard?.instantiateViewController(withIdentifier: "tabdtbh") as! TabDtbhViewController
+//        let vc4 = storyboard?.instantiateViewController(withIdentifier: "tabdtbh") as! TabDtbhViewController
+//
+//        let vc5 = storyboard?.instantiateViewController(withIdentifier: "tabptm") as! TabPtmViewController
+//
+//        let vc6 = storyboard?.instantiateViewController(withIdentifier: "tabll") as! TabLLViewController
         
-        let vc5 = storyboard?.instantiateViewController(withIdentifier: "tabptm") as! TabPtmViewController
         
-        let vc6 = storyboard?.instantiateViewController(withIdentifier: "tabll") as! TabLLViewController
+//        tc.tabItems = [(vc1, "Home"), (vc2, "VLR"), (vc3, "DTTT"), (vc4, "DTBH"), (vc5, "PTM"), (vc6, "LL")]
+          tc.tabItems = [(vc1, "Home"), (vc2, "VLR"), (vc3, "DTTT")]
         
         
-        tc.tabItems = [(vc1, "Home"), (vc2, "VLR"), (vc3, "DTTT"), (vc4, "DTBH"), (vc5, "PTM"), (vc6, "LL")]
         //tc.displayControllerWithIndex(1, direction: .forward, animated: false)
         
         var option = TabPageOption()
